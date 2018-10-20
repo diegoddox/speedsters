@@ -1,5 +1,5 @@
 {
-  "name": "@jsnp/monitor",
+  "name": "jsnp",
   "version": "0.0.1",
   "description": "",
   "main": "dist/index.js",
@@ -9,8 +9,9 @@
     "start:dev-server": "cd renderer && npm start",
     "start:electron": "electron .",
     "watch:electron": "tsc -w",
-    "build": "yarn run pre-build && electron-builder",
+    "build": "yarn run pre-build && electron-builder -mwl",
     "build:mac": "yarn run pre-build && electron-builder -m",
+    "build:windows": "yarn run pre-build && electron-builder -w",
     "build:renderer": "cd renderer && yarn run build",
     "build:electron-main": "tsc",
     "pre-build": "yarn run clean && yarn run copy-assets && yarn run copy-icons && yarn run build:electron-main && yarn run build:renderer",
@@ -23,7 +24,7 @@
   "homepage": "./",
   "build": {
     "appId": "com.jsnp.app",
-    "productName": "Nice Performance Monitor",
+    "productName": "Jsnp",
     "electronDownload": {
       "cache": ".electron.cache"
     },
