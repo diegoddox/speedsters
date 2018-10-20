@@ -62,14 +62,6 @@ export class Socket implements CoreSocket{
       this.isReady = false;
       this.socket = null;
       onError && onError(e);
-
-      console.log(`
-       _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-      |                                                                         |
-      |  NPerformance: We're not able to connect to the NPerformance-Monitor,   |
-      |  make sure that the application is running and reload you Application.  |
-      | _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ |
-      `);
     };
   
     socket.onclose = (e) => {
