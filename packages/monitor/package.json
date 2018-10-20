@@ -1,0 +1,74 @@
+{
+  "name": "nice-performance-monitor",
+  "version": "0.0.1",
+  "description": "Nice Performance Monitor come to make performance testing much fun",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "concurrently 'BROWSER=none yarn start:dev-server' 'update:nice-performance' 'npm run wait:localhost && npm run start:electron' 'npm run watch:electron'",
+    "wait:localhost": "wait-on http://localhost:1337",
+    "start:dev-server": "cd renderer && npm start",
+    "start:electron": "electron .",
+    "watch:electron": "tsc -w",
+    "build": "yarn run pre-build && electron-builder",
+    "build:mac": "yarn run pre-build && electron-builder -m",
+    "build:renderer": "cd renderer && yarn run build",
+    "build:electron-main": "tsc",
+    "pre-build": "yarn run clean && yarn run copy-assets && yarn run copy-icons && yarn run build:electron-main && yarn run build:renderer",
+    "copy-assets": "../../node_modules/.bin/copyfiles -f main/assets/* ./dist/assets",
+    "copy-icons": "../../node_modules/.bin/copyfiles -f main/icons/* ./dist/icons",
+    "clean": "rimraf dist && rimraf release"
+  },
+  "keywords": [
+    "nice performance monitor",
+    "performance",
+    "react-native test",
+    "react-native test performance",
+    "react performance",
+    "speed test",
+    "performance.now"
+  ],
+  "author": "",
+  "license": "ISC",
+  "homepage": "./",
+  "build": {
+    "appId": "com.jsnpm.app",
+    "productName": "Nice Performance Monitor",
+    "electronDownload": {
+      "cache": ".electron.cache"
+    },
+    "directories": {
+      "buildResources": "dist/",
+      "output": "release"
+    },
+    "mac": {
+      "category": "public.app-category.developer-tools"
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 400,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "files": ["dist/**/*"]
+  },
+  "dependencies": {
+    "electron-is-dev": "^0.3.0",
+    "electron-window-state": "^5.0.1",
+    "ws": "^6.0.0"
+  },
+  "devDependencies": {
+    "electron": "2.0.8",
+    "electron-builder": "^20.28.3"
+  }
+}

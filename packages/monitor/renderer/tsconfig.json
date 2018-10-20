@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "rootDir": "src",
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "preserveConstEnums": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "target": "es5",
+    "baseUrl": ".",
+    "paths": {
+      "Common/*": ["./src/Common/*"],
+      "Utils": ["./src/Utils"],
+    }
+  },
+  "include": [
+    "./src"
+  ],
+}

@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/dieoli/projects/rnp/native/android/app/build/intermediates/res/merged/debug/layout-v26/abc_screen_toolbar.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/layout-v26/abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/example/native/android/app/build/intermediates/res/merged/debug/layout-v26/abc_screen_toolbar.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/layout-v26/abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/BlogApp/android/app/build/intermediates/res/merged/debug/layout-v26/abc_screen_toolbar.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/layout-v26/abc_screen_toolbar.xml"
+    }
+]

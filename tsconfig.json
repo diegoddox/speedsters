@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@jsnp/core": ["./packages/core/src"],
+      "@jsnp/type": ["./packages/type"]
+    },
+    "noEmit": true
+  },
+  "exclude": ["example/"]
+}

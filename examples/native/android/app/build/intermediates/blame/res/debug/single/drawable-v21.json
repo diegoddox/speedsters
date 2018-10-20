@@ -1,0 +1,50 @@
+[
+    {
+        "merged": "/Users/dieoli/projects/rnp/native/android/app/build/intermediates/res/merged/debug/drawable-v21/notification_action_background.xml",
+        "source": "/Users/dieoli/.android/build-cache/2835380c974e23edb2e96003e73f73c2db23d0cc/output/res/drawable-v21/notification_action_background.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/native/android/app/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/drawable-v21/abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/example/native/android/app/build/intermediates/res/merged/debug/drawable-v21/abc_edit_text_material.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/drawable-v21/abc_edit_text_material.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/example/native/android/app/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/drawable-v21/abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/BlogApp/android/app/build/intermediates/res/merged/debug/drawable-v21/abc_edit_text_material.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/drawable-v21/abc_edit_text_material.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/native/android/app/build/intermediates/res/merged/debug/drawable-v21/abc_edit_text_material.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/drawable-v21/abc_edit_text_material.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/example/native/android/app/build/intermediates/res/merged/debug/drawable-v21/notification_action_background.xml",
+        "source": "/Users/dieoli/.android/build-cache/2835380c974e23edb2e96003e73f73c2db23d0cc/output/res/drawable-v21/notification_action_background.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/BlogApp/android/app/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/drawable-v21/abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/native/android/app/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/drawable-v21/abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/BlogApp/android/app/build/intermediates/res/merged/debug/drawable-v21/notification_action_background.xml",
+        "source": "/Users/dieoli/.android/build-cache/2835380c974e23edb2e96003e73f73c2db23d0cc/output/res/drawable-v21/notification_action_background.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/example/native/android/app/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/drawable-v21/abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/BlogApp/android/app/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/drawable-v21/abc_action_bar_item_background_material.xml"
+    }
+]

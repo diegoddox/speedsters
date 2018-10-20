@@ -1,0 +1,62 @@
+{
+  "name": "jsnp",
+  "scripts": {
+    "start": "concurrently 'yarn run start:example-blog-server' 'yarn run start:core' 'yarn run start:monitor' 'yarn run start:example-native-blog-app'",
+    "start:example-native-blog-app": "cd examples/native && yarn start",
+    "start:example-blog-server": "cd examples/server && yarn start",
+    "start:example-web-app": "cd examples/webapp && yarn start",
+    "start:examples": "concurrently 'yarn run start:example-web-app' 'yarn run start:example-blog-server' 'yarn run start:example-native-blog-app'",
+    "start:electron:monitor": "cd packages/monitor && yarn run start:electron",
+    "start:electron:watch": "cd packages/monitor && yarn run watch:electron",
+    "start:core": "cd packages/core && yarn start",
+    "start:monitor": "cd packages/monitor && yarn start",
+    "build": "lerna run build",
+    "build:monitor": "cd packages/monitor && yarn run build",
+    "build:electron-renderer": "cd packages/monitor/renderer && yarn run build",
+    "build:electron-main": "cd packages/monitor && yarn run build:electron-main",
+    "build:core": "cd packages/core && yarn run build",
+    "build:react": "cd packages/react && yarn run build",
+    "build:performance": "cd packages/performance && yarn run build",
+    "build:@jsnp": "yarn run build:core && yarn run build:react && yarn run build:performance",
+    "clean": "lerna run clean",
+    "test": "lerna run test"
+  },
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/**/*"
+    ],
+    "nohoist": [
+      "**/react-native/**",
+      "**/electron-builder/**",
+      "**/node-pre-gyp/**"
+    ]
+  },
+  "keywords": [
+    "jsnp performance",
+    "performance",
+    "react-native test",
+    "react-native test performance",
+    "react performance",
+    "speed test",
+    "performance.now"
+  ],
+  "author": "Diego Oliveira",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "23.3.1",
+    "@types/ws": "6.0.0",
+    "babel-jest": "23.4.2",
+    "concurrently": "3.6.1",
+    "copyfiles": "^2.1.0",
+    "devtron": "^1.4.0",
+    "electron-reload": "^1.2.5",
+    "jest": "23.4.2",
+    "lerna": "^3.4.3",
+    "rimraf": "^2.6.2",
+    "ts-jest": "23.1.2",
+    "ts-node": "7.0.0",
+    "typescript": "3.0.1",
+    "wait-on": "2.1.0"
+  }
+}

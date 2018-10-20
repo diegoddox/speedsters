@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/dieoli/.android/build-cache/dd5e14d21b4eb59806edff373f8986e58432ca8a/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="e7a850c25a7efbd533c496ab482c980fdafac58d">
+        <dex dex="/Users/dieoli/projects/rnp/example/native/android/app/build/intermediates/pre-dexed/debug/classes_9ac43dcb6f536f413ff82e7eaa2adba5682ab174.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/dieoli/.android/build-cache/dd5e14d21b4eb59806edff373f8986e58432ca8a/output/jars/libs/infer-annotations-4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
+        <dex dex="/Users/dieoli/projects/rnp/example/native/android/app/build/intermediates/pre-dexed/debug/infer-annotations-4.0_640e9e4fe6de5804964d548262964193cca8659d.jar" />
+    </item>
+
+</items>

@@ -1,0 +1,37 @@
+{
+  "name": "@jsnp/core",
+  "version": "0.0.1",
+  "description": "",
+  "main": "./cjs/index.js",
+  "esnext": "./esnext/index.js",
+  "types": "./types/index.d.ts",
+  "scripts": {
+    "start": "tsc -w",
+    "build": "npm run clean && tsc -p tsconfig.build.json && tsc -p tsconfig.build.c.json",
+    "prepublish": "npm run build",
+    "clean": "rimraf esnext types cjs",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@jsnp/type": "*" 
+  },
+  "author": "Diego Oliveira <diegoddox@gmail.com>",
+  "license": "MIT",
+  "jest": {
+    "verbose": true,
+    "testURL": "http://localhost/",
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts)$": "ts-jest"
+    },
+    "testMatch": ["**/*test.ts"]
+  },
+  "files": [
+    "cjs/",
+    "esnext/",
+    "types/"
+  ]
+}

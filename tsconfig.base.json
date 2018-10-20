@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "removeComments": true,
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "strict": true,
+    "jsx": "preserve",
+    "declaration": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "lib": ["es6", "dom"]
+  },
+  "exclude": [
+    "node_modules",
+    "**/*.test.ts"
+  ],
+}

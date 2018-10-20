@@ -1,0 +1,38 @@
+{
+  "name": "@jsnp/react",
+  "version": "0.0.1",
+  "description": "A simple way of testing your application performance",
+  "main": "./cjs/index.js",
+  "esnext": "./esnext/index.js",
+  "types": "./types/index.d.ts",
+  "scripts": {
+    "start": "tsc -w",
+    "build": "npm run clean && tsc -p tsconfig.build.json && tsc -p tsconfig.build.c.json",
+    "prepublish": "npm run build",
+    "clean": "rimraf esnext types cjs",
+    "test": "jest"
+  },
+  "author": "Diego Oliveira <diegoddox@gmail.com>",
+  "dependencies": {
+    "@jsnp/core": "*",
+    "@jsnp/type": "*"
+  },
+  "license": "MIT",
+  "jest": {
+    "verbose": true,
+    "testURL": "http://localhost/",
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "testMatch": ["**/*test.ts"]
+  },
+  "files": [
+    "esnext/",
+    "cjs",
+    "types/"
+  ]
+}

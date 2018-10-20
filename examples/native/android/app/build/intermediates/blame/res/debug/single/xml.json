@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/dieoli/projects/rnp/BlogApp/android/app/build/intermediates/res/merged/debug/xml/preferences.xml",
+        "source": "/Users/dieoli/.android/build-cache/b8951aac71888c48a67d20b48d823dc4f5e9005f/output/res/xml/preferences.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/native/android/app/build/intermediates/res/merged/debug/xml/preferences.xml",
+        "source": "/Users/dieoli/.android/build-cache/61f5d38d19129e971d1d5e9d9ff9ad6da272f3ba/output/res/xml/preferences.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/example/native/android/app/build/intermediates/res/merged/debug/xml/preferences.xml",
+        "source": "/Users/dieoli/.android/build-cache/dd5e14d21b4eb59806edff373f8986e58432ca8a/output/res/xml/preferences.xml"
+    }
+]

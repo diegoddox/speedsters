@@ -1,0 +1,4 @@
+#Sat Aug 11 08:42:15 PHT 2018
+base.0=/Users/dieoli/projects/rnp/example/native/android/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main
+renamed.0=classes.dex
+file.0=/Users/dieoli/projects/rnp/example/native/android/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex

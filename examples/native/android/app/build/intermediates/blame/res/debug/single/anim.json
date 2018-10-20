@@ -1,0 +1,218 @@
+[
+    {
+        "merged": "/Users/dieoli/projects/rnp/BlogApp/android/app/build/intermediates/res/merged/debug/anim/catalyst_push_up_out.xml",
+        "source": "/Users/dieoli/.android/build-cache/b8951aac71888c48a67d20b48d823dc4f5e9005f/output/res/anim/catalyst_push_up_out.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/example/native/android/app/build/intermediates/res/merged/debug/anim/catalyst_fade_in.xml",
+        "source": "/Users/dieoli/.android/build-cache/dd5e14d21b4eb59806edff373f8986e58432ca8a/output/res/anim/catalyst_fade_in.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/native/android/app/build/intermediates/res/merged/debug/anim/abc_slide_in_bottom.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/anim/abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/BlogApp/android/app/build/intermediates/res/merged/debug/anim/abc_popup_enter.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/anim/abc_popup_enter.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/example/native/android/app/build/intermediates/res/merged/debug/anim/abc_fade_in.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/anim/abc_fade_in.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/native/android/app/build/intermediates/res/merged/debug/anim/abc_fade_out.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/anim/abc_fade_out.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/example/native/android/app/build/intermediates/res/merged/debug/anim/catalyst_push_up_out.xml",
+        "source": "/Users/dieoli/.android/build-cache/dd5e14d21b4eb59806edff373f8986e58432ca8a/output/res/anim/catalyst_push_up_out.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/BlogApp/android/app/build/intermediates/res/merged/debug/anim/abc_fade_in.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/anim/abc_fade_in.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/native/android/app/build/intermediates/res/merged/debug/anim/catalyst_slide_up.xml",
+        "source": "/Users/dieoli/.android/build-cache/61f5d38d19129e971d1d5e9d9ff9ad6da272f3ba/output/res/anim/catalyst_slide_up.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/BlogApp/android/app/build/intermediates/res/merged/debug/anim/catalyst_slide_up.xml",
+        "source": "/Users/dieoli/.android/build-cache/b8951aac71888c48a67d20b48d823dc4f5e9005f/output/res/anim/catalyst_slide_up.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/native/android/app/build/intermediates/res/merged/debug/anim/abc_shrink_fade_out_from_bottom.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/anim/abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/example/native/android/app/build/intermediates/res/merged/debug/anim/abc_slide_in_top.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/anim/abc_slide_in_top.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/native/android/app/build/intermediates/res/merged/debug/anim/abc_slide_in_top.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/anim/abc_slide_in_top.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/example/native/android/app/build/intermediates/res/merged/debug/anim/abc_popup_enter.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/anim/abc_popup_enter.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/example/native/android/app/build/intermediates/res/merged/debug/anim/abc_fade_out.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/anim/abc_fade_out.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/native/android/app/build/intermediates/res/merged/debug/anim/abc_grow_fade_in_from_bottom.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/anim/abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/native/android/app/build/intermediates/res/merged/debug/anim/abc_popup_enter.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/anim/abc_popup_enter.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/example/native/android/app/build/intermediates/res/merged/debug/anim/abc_popup_exit.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/anim/abc_popup_exit.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/BlogApp/android/app/build/intermediates/res/merged/debug/anim/catalyst_fade_in.xml",
+        "source": "/Users/dieoli/.android/build-cache/b8951aac71888c48a67d20b48d823dc4f5e9005f/output/res/anim/catalyst_fade_in.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/example/native/android/app/build/intermediates/res/merged/debug/anim/tooltip_enter.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/anim/tooltip_enter.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/BlogApp/android/app/build/intermediates/res/merged/debug/anim/abc_slide_in_top.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/anim/abc_slide_in_top.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/native/android/app/build/intermediates/res/merged/debug/anim/abc_slide_out_bottom.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/anim/abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/example/native/android/app/build/intermediates/res/merged/debug/anim/abc_slide_out_top.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/anim/abc_slide_out_top.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/native/android/app/build/intermediates/res/merged/debug/anim/catalyst_push_up_in.xml",
+        "source": "/Users/dieoli/.android/build-cache/61f5d38d19129e971d1d5e9d9ff9ad6da272f3ba/output/res/anim/catalyst_push_up_in.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/BlogApp/android/app/build/intermediates/res/merged/debug/anim/tooltip_enter.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/anim/tooltip_enter.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/BlogApp/android/app/build/intermediates/res/merged/debug/anim/abc_grow_fade_in_from_bottom.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/anim/abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/example/native/android/app/build/intermediates/res/merged/debug/anim/catalyst_slide_down.xml",
+        "source": "/Users/dieoli/.android/build-cache/dd5e14d21b4eb59806edff373f8986e58432ca8a/output/res/anim/catalyst_slide_down.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/BlogApp/android/app/build/intermediates/res/merged/debug/anim/abc_popup_exit.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/anim/abc_popup_exit.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/native/android/app/build/intermediates/res/merged/debug/anim/abc_fade_in.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/anim/abc_fade_in.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/BlogApp/android/app/build/intermediates/res/merged/debug/anim/abc_fade_out.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/anim/abc_fade_out.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/example/native/android/app/build/intermediates/res/merged/debug/anim/abc_slide_out_bottom.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/anim/abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/BlogApp/android/app/build/intermediates/res/merged/debug/anim/catalyst_push_up_in.xml",
+        "source": "/Users/dieoli/.android/build-cache/b8951aac71888c48a67d20b48d823dc4f5e9005f/output/res/anim/catalyst_push_up_in.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/native/android/app/build/intermediates/res/merged/debug/anim/abc_slide_out_top.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/anim/abc_slide_out_top.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/BlogApp/android/app/build/intermediates/res/merged/debug/anim/catalyst_fade_out.xml",
+        "source": "/Users/dieoli/.android/build-cache/b8951aac71888c48a67d20b48d823dc4f5e9005f/output/res/anim/catalyst_fade_out.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/BlogApp/android/app/build/intermediates/res/merged/debug/anim/tooltip_exit.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/anim/tooltip_exit.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/BlogApp/android/app/build/intermediates/res/merged/debug/anim/abc_slide_in_bottom.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/anim/abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/native/android/app/build/intermediates/res/merged/debug/anim/catalyst_slide_down.xml",
+        "source": "/Users/dieoli/.android/build-cache/61f5d38d19129e971d1d5e9d9ff9ad6da272f3ba/output/res/anim/catalyst_slide_down.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/example/native/android/app/build/intermediates/res/merged/debug/anim/abc_slide_in_bottom.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/anim/abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/native/android/app/build/intermediates/res/merged/debug/anim/tooltip_enter.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/anim/tooltip_enter.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/BlogApp/android/app/build/intermediates/res/merged/debug/anim/abc_slide_out_top.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/anim/abc_slide_out_top.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/example/native/android/app/build/intermediates/res/merged/debug/anim/catalyst_push_up_in.xml",
+        "source": "/Users/dieoli/.android/build-cache/dd5e14d21b4eb59806edff373f8986e58432ca8a/output/res/anim/catalyst_push_up_in.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/native/android/app/build/intermediates/res/merged/debug/anim/catalyst_push_up_out.xml",
+        "source": "/Users/dieoli/.android/build-cache/61f5d38d19129e971d1d5e9d9ff9ad6da272f3ba/output/res/anim/catalyst_push_up_out.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/example/native/android/app/build/intermediates/res/merged/debug/anim/abc_shrink_fade_out_from_bottom.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/anim/abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/BlogApp/android/app/build/intermediates/res/merged/debug/anim/abc_slide_out_bottom.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/anim/abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/example/native/android/app/build/intermediates/res/merged/debug/anim/catalyst_slide_up.xml",
+        "source": "/Users/dieoli/.android/build-cache/dd5e14d21b4eb59806edff373f8986e58432ca8a/output/res/anim/catalyst_slide_up.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/native/android/app/build/intermediates/res/merged/debug/anim/catalyst_fade_in.xml",
+        "source": "/Users/dieoli/.android/build-cache/61f5d38d19129e971d1d5e9d9ff9ad6da272f3ba/output/res/anim/catalyst_fade_in.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/example/native/android/app/build/intermediates/res/merged/debug/anim/catalyst_fade_out.xml",
+        "source": "/Users/dieoli/.android/build-cache/dd5e14d21b4eb59806edff373f8986e58432ca8a/output/res/anim/catalyst_fade_out.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/example/native/android/app/build/intermediates/res/merged/debug/anim/tooltip_exit.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/anim/tooltip_exit.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/native/android/app/build/intermediates/res/merged/debug/anim/abc_popup_exit.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/anim/abc_popup_exit.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/BlogApp/android/app/build/intermediates/res/merged/debug/anim/abc_shrink_fade_out_from_bottom.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/anim/abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/native/android/app/build/intermediates/res/merged/debug/anim/tooltip_exit.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/anim/tooltip_exit.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/BlogApp/android/app/build/intermediates/res/merged/debug/anim/catalyst_slide_down.xml",
+        "source": "/Users/dieoli/.android/build-cache/b8951aac71888c48a67d20b48d823dc4f5e9005f/output/res/anim/catalyst_slide_down.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/native/android/app/build/intermediates/res/merged/debug/anim/catalyst_fade_out.xml",
+        "source": "/Users/dieoli/.android/build-cache/61f5d38d19129e971d1d5e9d9ff9ad6da272f3ba/output/res/anim/catalyst_fade_out.xml"
+    },
+    {
+        "merged": "/Users/dieoli/projects/rnp/example/native/android/app/build/intermediates/res/merged/debug/anim/abc_grow_fade_in_from_bottom.xml",
+        "source": "/Users/dieoli/.android/build-cache/e2dbf5d5f2c1605568ce9f09d4b3e846e59cd43f/output/res/anim/abc_grow_fade_in_from_bottom.xml"
+    }
+]

@@ -1,0 +1,11 @@
+{
+  "name": "@jsnp/type",
+  "version": "0.0.1",
+  "main": "",
+  "types": "./index.d.ts",
+  "author": "Diego Oliveira <diegoddox@gmail.com>",
+  "license": "MIT",
+  "files": [
+    "index.d.ts"
+  ]
+}
