@@ -1,4 +1,4 @@
-import { CreateSocketOptions } from '@jsnp/type';
+import { CreateSocketOptions, CoreSocket } from '@jsnp/type';
 
 const DEFAULT_OPTIONS: CreateSocketOptions = {
   name: '@jsnp',
@@ -7,8 +7,8 @@ const DEFAULT_OPTIONS: CreateSocketOptions = {
   secure: false,
 };
 
-export class Socket {
-  private socket: WebSocket | any = null;
+export class Socket implements CoreSocket{
+  private socket: WebSocket | null = null;
   private isReady: boolean = false;
   private sendQueue: any[] = [];
   private options: CreateSocketOptions = {};
@@ -60,7 +60,7 @@ export class Socket {
   
     socket.onerror = (e) => {
       this.isReady = false;
-
+      this.socket = null;
       onError && onError(e);
 
       console.log(`
@@ -74,7 +74,7 @@ export class Socket {
   
     socket.onclose = (e) => {
       this.isReady = false;
-
+      this.socket = null;
       onClose && onClose(e);
     };
 
@@ -85,7 +85,7 @@ export class Socket {
   public send(data: object) {
     const stringData = JSON.stringify(data);
 
-    if (this.isReady) {
+    if (this.isReady && this.socket) {
       this.socket.send(stringData);
     } else {
       this.sendQueue.push(stringData);
@@ -93,7 +93,7 @@ export class Socket {
   }
 
   public sendPerformance(data: object) {
-    // Use this to send data to the monitor.
+    // Use this to send data to the @jsnp/monitor.
     this.send({
       applicationName: this.options.name,
       type: 'SOCKET:PERFORMANCE_DATA',
@@ -102,7 +102,7 @@ export class Socket {
   }
 }
 
-export function createSocket(config: CreateSocketOptions): Socket {
+export function createSocket(config: CreateSocketOptions): CoreSocket {
   const socket = new Socket();
   socket.configure(config);
   return socket;

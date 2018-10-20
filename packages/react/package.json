@@ -1,10 +1,17 @@
 {
   "name": "@jsnp/react",
   "version": "0.0.1",
-  "description": "A simple way of testing your application performance",
+  "description": "A simple way of testing your react application performance",
   "main": "./cjs/index.js",
   "esnext": "./esnext/index.js",
   "types": "./types/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/diegoddox/jsnp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/diegoddox/jsnp/issues"
+  },
   "scripts": {
     "start": "tsc -w",
     "build": "npm run clean && tsc -p tsconfig.build.json && tsc -p tsconfig.build.c.json",
@@ -28,11 +35,14 @@
     "transform": {
       "^.+\\.(ts|tsx)$": "ts-jest"
     },
-    "testMatch": ["**/*test.ts"]
+    "testMatch": [
+      "**/*test.ts"
+    ]
   },
   "files": [
     "esnext/",
     "cjs",
     "types/"
-  ]
+  ],
+  "homepage": "https://github.com/diegoddox/jsnp#readme"
 }

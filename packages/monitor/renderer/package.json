@@ -1,5 +1,5 @@
 {
-  "name": "nice-performance-monitor-react",
+  "name": "@jsnp/monitor-renderer",
   "version": "0.0.1",
   "scripts": {
     "start": "webpack-dev-server --config config/webpack.dev.js",

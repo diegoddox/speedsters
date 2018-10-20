@@ -4,6 +4,7 @@ import {
   StartPerformanceOptions,
   JsnpPerformance,
   BaseData,
+  CoreSocket
 } from '@jsnp/type';
 
 import {
@@ -14,14 +15,14 @@ import {
   isObject
 } from '../utils';
 
-import { createSocket, Socket } from '@jsnp/core';
+import { createSocket } from '@jsnp/core';
 import denormalize from '../utils/denormalize';
 
 const DEFAULT_OPTIONS: CreateSocketOptions = {
   name: 'Nice Performance',
 };
 
-let socket: Socket;
+let socket: CoreSocket;
 
 export class NicePerformance implements JsnpPerformance {
   private _data: Data | any = {};

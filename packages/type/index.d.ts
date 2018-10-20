@@ -65,6 +65,13 @@ export declare interface JsnpPerformance {
   log(): void;
 }
 
+export declare interface CoreSocket {
+  configure(options: CreateSocketOptions): CoreSocket;
+  connect(): CoreSocket;
+  send(data: object): void;
+  sendPerformance(data: object): void;
+}
+
 export declare interface JsnpReact {
   connect(options: CreateSocketOptions): JsnpReact;
   component(options: ReactComponentOptions): void;

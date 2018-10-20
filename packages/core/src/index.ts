@@ -1,6 +1,5 @@
-export { createSocket, Socket } from './socket';
 import { CreateSocketOptions } from '@jsnp/type';
-
+export { createSocket, Socket } from './socket';
 
 export function connect(options: CreateSocketOptions, connections: Function[]) {
   if (Array.isArray(connections)) {

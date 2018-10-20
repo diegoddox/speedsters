@@ -1,11 +1,22 @@
 {
   "name": "@jsnp/type",
   "version": "0.0.1",
-  "main": "",
   "types": "./index.d.ts",
   "author": "Diego Oliveira <diegoddox@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/diegoddox/jsnp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/diegoddox/jsnp/issues"
+  },
   "files": [
     "index.d.ts"
-  ]
+  ],
+  "homepage": "https://github.com/diegoddox/jsnp#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "description": ""
 }

@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "start": "node node_modules/react-native/local-cli/cli.js start & yarn run start:dev-server",
+    "start:dev-server": "json-server --watch db.json",
     "test": "jest"
   },
   "dependencies": {
@@ -16,6 +17,7 @@
     "babel-jest": "23.4.2",
     "babel-preset-react-native": "^5",
     "jest": "23.4.2",
+    "json-server": "^0.14.0",
     "react-test-renderer": "16.4.1"
   },
   "jest": {

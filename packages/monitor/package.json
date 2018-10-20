@@ -1,10 +1,10 @@
 {
-  "name": "nice-performance-monitor",
+  "name": "@jsnp/monitor",
   "version": "0.0.1",
-  "description": "Nice Performance Monitor come to make performance testing much fun",
+  "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "start": "concurrently 'BROWSER=none yarn start:dev-server' 'update:nice-performance' 'npm run wait:localhost && npm run start:electron' 'npm run watch:electron'",
+    "start": "concurrently 'BROWSER=none yarn start:dev-server' 'npm run wait:localhost && npm run start:electron' 'npm run watch:electron'",
     "wait:localhost": "wait-on http://localhost:1337",
     "start:dev-server": "cd renderer && npm start",
     "start:electron": "electron .",
@@ -18,20 +18,11 @@
     "copy-icons": "../../node_modules/.bin/copyfiles -f main/icons/* ./dist/icons",
     "clean": "rimraf dist && rimraf release"
   },
-  "keywords": [
-    "nice performance monitor",
-    "performance",
-    "react-native test",
-    "react-native test performance",
-    "react performance",
-    "speed test",
-    "performance.now"
-  ],
-  "author": "",
+  "author": "Diego Oliveira <diegoddox@gmail.com>",
   "license": "ISC",
   "homepage": "./",
   "build": {
-    "appId": "com.jsnpm.app",
+    "appId": "com.jsnp.app",
     "productName": "Nice Performance Monitor",
     "electronDownload": {
       "cache": ".electron.cache"

@@ -1,0 +1,1 @@
+# JSNP [https://github.com/diegoddox/jsnp](https://github.com/diegoddox/jsnp) for details.

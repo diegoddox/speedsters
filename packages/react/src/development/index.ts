@@ -4,9 +4,10 @@ import {
   JsnpReact as JsnpReactType,
   ReactComponentData,
   ReactComponentOptions,
+  CoreSocket
 } from '@jsnp/type';
 
-import { createSocket, Socket } from '@jsnp/core';
+import { createSocket } from '@jsnp/core';
 import { performanceNow } from '../utils';
 
 export const RENDER_COUNT = 'renderCount';
@@ -21,7 +22,7 @@ const DEFAULT_COMPONENT_OPTIONS: ReactComponentOptions = {
 
 const RENDER = 'render';
 
-let socket: Socket;
+let socket: CoreSocket;
 
 export class JsnpReact implements JsnpReactType {
   private _data: Data | any = {};
