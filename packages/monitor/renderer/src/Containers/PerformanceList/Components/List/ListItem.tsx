@@ -3,13 +3,14 @@ import * as CSSType from 'csstype';
 import { styled } from 'styletron-react';
 import { hasPerformanceIssue, millisecondsToSeconds } from 'Utils';
 import { BasePerformance } from '../../';
-import globalStyles, { ellipsis } from 'Common/Styles';
+import globalStyles, { ellipsis, preventUserSelection } from 'Common/Styles';
 
 const ListHolder = styled('div', {
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
   borderBottom: '1px solid #344256',
+  ...preventUserSelection,
 } as CSSType.Properties);
 
 export const LIST_VALUE_WIDTH = '35%';
@@ -82,7 +83,7 @@ const CountList = styled('div', () => ({
     width: 0,
     height: 0,
     background: 'transparent',
-  }
+  },
 } as CSSType.Properties));
 
 const CountListItem = styled('div', {
