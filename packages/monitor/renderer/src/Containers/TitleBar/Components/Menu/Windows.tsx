@@ -8,8 +8,6 @@ import * as menuHelpers from './helpers';
 const WindowsMenuHolder = styled('div', {
   display: 'flex',
   justifyContent:'flex-end',
-  paddingLeft: globalStyles.mediumSpace,
-  paddingRight: globalStyles.mediumSpace,
 } as CSSType.Properties);
 
 const ICON_SIZE = '20px';
@@ -78,7 +76,6 @@ export default class WindowsMenu extends React.PureComponent {
           <BaseIcon name="square-o" />
         </WindowsBaseButton>
         <WindowsBaseButton
-          $marginRight={globalStyles.smallSpace}
           onClick={this.handleCloseButton}
         >
           <BaseIcon name="android-close" />
