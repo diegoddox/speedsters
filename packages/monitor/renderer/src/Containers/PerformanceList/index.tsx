@@ -9,6 +9,8 @@ import CSSType from 'csstype';
 import globalStyle, { preventUserSelection } from 'Common/Styles';
 import Logo from 'Common/Logo';
 import filterPerformances from './filter-performances';
+import checkPerformance from './check-performance';
+import { ipcRenderer } from 'electron';
 
 export type BasePerformance = {
   name: string;
@@ -41,7 +43,47 @@ const Info = styled('div', {
   color: globalStyle.color.softWhite,
 } as CSSType.Properties);
 
-class PerformanceList extends React.Component<Props, {}> {
+export class PerformanceList extends React.Component<Props, {}> {
+  checkPerformanceTimeout: any = null;
+  lastTotalIssues: number = 0;
+
+  constructor(props: Props) {
+    super(props);
+
+    this.checkPerformanceAndNotify = this.checkPerformanceAndNotify.bind(this);
+  }
+
+  componentDidUpdate() {
+    this.checkPerformanceAndNotify(this.props.performances);
+  }
+
+  checkPerformanceAndNotify(performances: any) {
+    if (this.checkPerformanceTimeout) {
+      clearTimeout(this.checkPerformanceTimeout);
+    }
+
+    this.checkPerformanceTimeout = setTimeout(() => {
+      checkPerformance(performances).then(resp => {
+        if (resp && resp.totalIssues && this.lastTotalIssues !== resp.totalIssues) {
+          this.lastTotalIssues = resp.totalIssues;
+
+          ipcRenderer.send('main-window-is-blur');
+
+          ipcRenderer.on('main-window-is-blur:reply', (env: any, isBlur: boolean) => {
+            if (isBlur) {
+              const title = `You have ${resp.totalIssues} ${resp.totalIssues > 1 ? 'performances' : 'performance'} that didn't pass`;
+              const issueNotification = new Notification(title, {
+                body: 'Some of your performance didn\'t pass, you may wanna take a look at.'
+              });
+
+              issueNotification.onclick = () => ipcRenderer.send('focus-main-window');
+            }
+          });
+        }
+      });
+    }, 2000);
+  }
+
   render() {
     return (
       <Container>
@@ -50,12 +92,15 @@ class PerformanceList extends React.Component<Props, {}> {
             <Logo />
             <InfoHolder>
               <Info>
-                Looks like we're not able to connect to any NPerformance, reload your application in order to re-connect
+                Looks like we're not able to connect to any @jsnp package, reload your application in order to re-connect
               </Info>
             </InfoHolder>
           </>
           :
-          <List performances={this.props.performances} quickSearchIsOpen={this.props.quickSearchIsOpen}/>
+          <List
+            performances={this.props.performances}
+            quickSearchIsOpen={this.props.quickSearchIsOpen}
+          />
         }
       </Container>
     );

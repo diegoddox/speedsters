@@ -82,6 +82,11 @@ function createWindow () {
   window.once('ready-to-show', () => {
     window.show();
 
+    ipcMain.on('main-window-is-blur', (event: any) => {
+      const isBlur = !window.isFocused();
+      event.sender.send('main-window-is-blur:reply', isBlur);
+    })
+
     if (isDev) {
       window.webContents.openDevTools();
     }
@@ -108,6 +113,12 @@ app.on('window-all-closed', handleCloseWindow);
 ipcMain.on('quick', handleCloseWindow);
 
 ipcMain.on('minimize', () => mainWindow.minimize());
+
+ipcMain.on('focus-main-window', () => {
+  if (mainWindow) {
+    mainWindow.focus();
+  }
+});
 
 ipcMain.on('fill-available-space', () => {
   if (mainWindow.isMaximized()) {
