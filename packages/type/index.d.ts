@@ -1,12 +1,13 @@
-export type BaseData = {
+export type BasePerformanceData = {
   milliseconds?: number | null;
   value?: number;
   time?: number;
+  renderCount?: RenderCount;
 }
 
 export type RenderCountHistory = {
   timing: number;
-  milliseconds: number | null;
+  milliseconds?: number | null;
 }
 
 export type RenderCount = {
@@ -23,13 +24,13 @@ export type StartPerformanceOptions = {
   milliseconds: number | null;
 }
 
-export type Data = {
-  [x: string]: BaseData | Data | number | string | null;
+export type PerformanceData = {
+  [x: string]: BasePerformanceData | PerformanceData | number | string | null;
 }
 
 type ReactData = {
   [x: string]: any;
-  ['renderCount']: RenderCount;
+  renderCount: RenderCount;
 }
 
 export type ReactComponentData = {
@@ -40,7 +41,8 @@ export type ReactComponentOptions = {
   excludes?: {
     [x: string]: boolean,
   },
-  milliseconds: number | null;
+  milliseconds?: number | null;
+  verbose?: boolean;
 } 
 
 export type CreateSocketOptions = {
@@ -56,7 +58,7 @@ export type CreateSocketOptions = {
 }
 
 export declare interface JsnpPerformance {
-  data: Data;
+  data: PerformanceData;
   connect(options: CreateSocketOptions): JsnpPerformance;
   start(key: string, group?: string, options?: StartPerformanceOptions): StartReturnedObject;
   stop(key: string, group?: string): void | null;

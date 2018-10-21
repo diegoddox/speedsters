@@ -1,9 +1,9 @@
 import {
   CreateSocketOptions,
-  Data,
+  PerformanceData,
   StartPerformanceOptions,
   JsnpPerformance,
-  BaseData,
+  BasePerformanceData,
   CoreSocket
 } from '@jsnp/type';
 
@@ -25,7 +25,7 @@ const DEFAULT_OPTIONS: CreateSocketOptions = {
 let socket: CoreSocket;
 
 export class NicePerformance implements JsnpPerformance {
-  private _data: Data | any = {};
+  private _data: PerformanceData | any = {};
   private hasInitiateConnect: boolean = false;
   private options: CreateSocketOptions = {};
 
@@ -72,7 +72,7 @@ export class NicePerformance implements JsnpPerformance {
     const dataObject = {
       [key]: {
         time: performanceNow(),
-      } as BaseData
+      } as BasePerformanceData
     };
 
     /**
@@ -83,9 +83,9 @@ export class NicePerformance implements JsnpPerformance {
       dataObject[key].milliseconds = options.milliseconds;
     }
 
-    const data: Data = group ? {
+    const data: PerformanceData = group ? {
       [group]: {
-        ...(this._data[group] as Data),
+        ...(this._data[group] as PerformanceData),
         ...dataObject,
       },
     } : dataObject;
@@ -147,7 +147,7 @@ export class NicePerformance implements JsnpPerformance {
     this._data = {};
   }
 
-  private mergeData(data: Data) {
+  private mergeData(data: PerformanceData) {
     this._data = {
       ...this._data,
       ...data,

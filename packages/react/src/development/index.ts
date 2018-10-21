@@ -1,8 +1,8 @@
 import {
   CreateSocketOptions,
-  Data,
   JsnpReact as JsnpReactType,
   ReactComponentData,
+  RenderCountHistory,
   ReactComponentOptions,
   CoreSocket
 } from '@jsnp/type';
@@ -18,6 +18,7 @@ const COMPONENT_DID_UPDATE = 'componentDidUpdate';
 const DEFAULT_COMPONENT_OPTIONS: ReactComponentOptions = {
   excludes: {},
   milliseconds: null,
+  verbose: false,
 };
 
 const RENDER = 'render';
@@ -25,7 +26,7 @@ const RENDER = 'render';
 let socket: CoreSocket;
 
 export class JsnpReact implements JsnpReactType {
-  private _data: Data | any = {};
+  private _data: ReactComponentData | any = {};
   private hasInitiateConnection: boolean = false;
 
   constructor() {
@@ -51,13 +52,13 @@ export class JsnpReact implements JsnpReactType {
     const proto = Object.getPrototypeOf(_this);
 
     if (!proto) {
-      return console.warn('NPerformance: looks like you\'re trying to run NPerformance.reactComponent in an anonymous component.');
+      return console.warn('@jsnp/react: looks like you\'re trying to run jsnpr.component in an anonymous component.');
     }
 
     // Get the React Class/Component name.
     const COMPONENT_NAME: string = _this.constructor && _this.constructor.displayName || _this.constructor.name || 'ReactComponentClass';
 
-    const { milliseconds, excludes }: ReactComponentOptions = { ...DEFAULT_COMPONENT_OPTIONS, ...options };
+    const { milliseconds, excludes, verbose }: ReactComponentOptions = { ...DEFAULT_COMPONENT_OPTIONS, ...options };
 
     const performanceData: ReactComponentData = {
       [COMPONENT_NAME]: {
@@ -90,11 +91,14 @@ export class JsnpReact implements JsnpReactType {
        */
       performanceData[COMPONENT_NAME][RENDER_COUNT].timing = time - firstRenderingStartTime;
 
-      // Save to the timeline.
-      performanceData[COMPONENT_NAME][RENDER_COUNT].timeline.push({
+      const renderCountItem: RenderCountHistory = {
         timing: time - renderStartTime,
-        milliseconds,
-      });
+      }
+      if (milliseconds) {
+        renderCountItem.milliseconds = milliseconds;
+      }
+      // Save to the timeline.
+      performanceData[COMPONENT_NAME][RENDER_COUNT].timeline.push(renderCountItem);
     }
 
     for (let name of Object.getOwnPropertyNames(proto)) {
@@ -163,6 +167,10 @@ export class JsnpReact implements JsnpReactType {
             ...this._data,
             ...performanceData,
           };
+
+          if (verbose) {
+            console.log(`@jsnp/react: ${COMPONENT_NAME} ${performanceData}`);
+          }
 
           /**
            * Send only if the user has 

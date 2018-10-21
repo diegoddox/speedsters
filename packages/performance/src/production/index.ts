@@ -8,7 +8,7 @@ const nicePerformance: JsnpPerformance = {
   clear: () => {},
   createGlobalLog: () => {},
   log: () => {
-    console.log('NPerformance is on production mode.');
+    console.log('Jsnp is on production mode.');
   },
 };
 

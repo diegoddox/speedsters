@@ -1,6 +1,6 @@
-import { Data } from '@jsnp/type';
+import { PerformanceData } from '@jsnp/type';
 
-export default function denormalize(performanceData: Data) {
+export default function denormalize(performanceData: PerformanceData) {
   if (!performanceData) {
     return null;
   }
@@ -25,7 +25,7 @@ export default function denormalize(performanceData: Data) {
     } else if (obj && typeof obj === 'object') {
       const newData: any = {
         name: key,
-        data: denormalize((obj as Data)),
+        data: denormalize((obj as PerformanceData)),
       };
 
       /**
