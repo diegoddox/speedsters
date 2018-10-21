@@ -21,6 +21,7 @@
     "publish:core": "cd packages/core && npm publish --access public",
     "publish:react": "cd packages/react && npm publish --access public",
     "publish:performance": "cd packages/performance && npm publish --access public",
+    "publish:packages": "yarn run publish:type && yarn run publish:core && yarn run publish:react && yarn run publish:performance",
     "clean": "lerna run clean",
     "test": "lerna run test"
   },

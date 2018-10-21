@@ -2,6 +2,30 @@
 # yarn lockfile v1
 
 
+"@jsnp/core@*":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@jsnp/core/-/core-0.0.3.tgz#71a798802ca402a6cf776896210f43c8e243a038"
+  dependencies:
+    "@jsnp/type" "*"
+
+"@jsnp/performance@*":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@jsnp/performance/-/performance-0.0.2.tgz#48e1552b238552ba36b656320ff655da5da5a05f"
+  dependencies:
+    "@jsnp/core" "*"
+    "@jsnp/type" "*"
+
+"@jsnp/react@*":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@jsnp/react/-/react-0.0.2.tgz#0e7e821eb3a55dec1360601e51f47e276b0acfef"
+  dependencies:
+    "@jsnp/core" "*"
+    "@jsnp/type" "*"
+
+"@jsnp/type@*":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@jsnp/type/-/type-0.0.2.tgz#e4e948be53b523b109aff4180e7cddf823110d9e"
+
 abab@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"
@@ -4494,9 +4518,6 @@ neo-async@^2.5.0:
 next-tick@1:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
-
-nice-performance@../../packages/nice-performance/:
-  version "0.0.1"
 
 no-case@^2.2.0:
   version "2.3.2"

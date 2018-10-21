@@ -1,6 +1,6 @@
 {
   "name": "@jsnp/react",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simple way of testing your react application performance",
   "main": "./cjs/index.js",
   "esnext": "./esnext/index.js",

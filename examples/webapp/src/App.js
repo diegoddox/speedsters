@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import NPReact from '@jsnp/react';
-import NPerformance from '@jsnp/performance';
+import jsnpr from '@jsnp/react';
+import jsnpp from '@jsnp/performance';
 
 class App extends Component {
   constructor(props) {
     super(props);
 
-    NPReact.Component(this);
+    jsnpr.component(this);
   }
 
   componentDidMount() {
-    const mount = NPerformance.start('will-mount-timeout', null, {
+    const mount = jsnpp.start('will-mount-timeout', null, {
       milliseconds: 1000
     });
     setTimeout(() => {

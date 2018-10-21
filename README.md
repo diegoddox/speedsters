@@ -1,4 +1,4 @@
-# ![](./docs/images/readme/jsnp-128.png)
+# ![](./docs/images/jsnp-128.png)
 
 # What is Jsnp?
 

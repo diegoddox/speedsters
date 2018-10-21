@@ -1,6 +1,6 @@
 {
   "name": "@jsnp/core",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "./cjs/index.js",
   "esnext": "./esnext/index.js",
   "types": "./types/index.d.ts",
