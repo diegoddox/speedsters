@@ -14,7 +14,8 @@
     "paths": {
       "Common/*": ["./src/Common/*"],
       "Utils": ["./src/Utils"],
-    }
+    },
+    "lib": ["dom", "es6"]
   },
   "include": [
     "./src"
