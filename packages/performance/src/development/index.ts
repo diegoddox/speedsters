@@ -64,7 +64,7 @@ export class NicePerformance implements JsnpPerformance {
     return this;
   }
 
-  public start(key: string, group?: string, options?: StartPerformanceOptions) {
+  public start(key: string, group?: string, options: StartPerformanceOptions = {}) {
 
     // Validate and log if the params are wrong
     isValidStartOptions(key, group, options);
@@ -79,7 +79,7 @@ export class NicePerformance implements JsnpPerformance {
      * If the user has pass @milliseconds in
      * the options pass to the payload
      */
-    if (options && options.hasOwnProperty('milliseconds')) {
+    if (options.milliseconds) {
       dataObject[key].milliseconds = options.milliseconds;
     }
 
@@ -93,7 +93,13 @@ export class NicePerformance implements JsnpPerformance {
     this.mergeData(data);
 
     return {
-      stop: () => this.stop(key, group),
+      stop: () => {
+        const performance: object = this.stop(key, group);
+        if (options.verbose) {
+          console.log(`@jsnp/performance: ${key} ${performance}`);
+        }
+        return performance;
+      },
     };
   }
 

@@ -14,8 +14,8 @@
   },
   "scripts": {
     "start": "tsc -w",
-    "build": "npm run clean && tsc -p tsconfig.build.json && tsc -p tsconfig.build.c.json",
-    "prepublish": "npm run build",
+    "build": "yarn run clean && tsc -p tsconfig.build.json && tsc -p tsconfig.build.c.json",
+    "prepare": "yarn run build",
     "clean": "rimraf esnext types cjs",
     "test": "jest"
   },

@@ -21,7 +21,8 @@ export type StartReturnedObject = {
 }
 
 export type StartPerformanceOptions = {
-  milliseconds: number | null;
+  milliseconds?: number;
+  verbose?: boolean;
 }
 
 export type PerformanceData = {
