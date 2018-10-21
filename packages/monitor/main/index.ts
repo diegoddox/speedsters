@@ -3,7 +3,6 @@ import {
   BrowserWindow,
   screen,
   ipcMain,
-  Notification,
 } from 'electron';
 import * as path from 'path';
 import * as isDev from 'electron-is-dev';
@@ -88,19 +87,10 @@ function createWindow () {
     }
   });
 
-  const notifier = new Notification({
-    title: 'Oi',
-    body: 'this is it',
-    icon: path.resolve(__dirname, '../build/icons/96x96.png')
-  });
-
-  ipcMain.on('search-focus', () => {
-    notifier.show();
-  });
-
   window.on('closed', () => {
     (mainWindow as any) = null;
   });
+
   return window;
 }
 
