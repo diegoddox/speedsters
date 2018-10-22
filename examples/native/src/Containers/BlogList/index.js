@@ -3,8 +3,8 @@ import { View, FlatList, TouchableOpacity } from 'react-native';
 import BlogListItem from './BlogListItem';
 import Header from '../../Common/Header';
 import styles from './styles';
-import NPerformance from '@jsnp/performance';
-import NPReact from '@jsnp/react';
+import jsnpp from '@jsnp/performance';
+import jsnpr from '@jsnp/react';
 
 class BlogList extends React.Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class BlogList extends React.Component {
 
     this.handleAnotherBinding = this.handleAnotherBinding.bind(this);
     
-    NPReact.component(this, {
+    jsnpr.component(this, {
       excludes: {
         handleAnotherBinding: true,
       },
@@ -25,12 +25,12 @@ class BlogList extends React.Component {
     });
 
     setTimeout(() => {
-      NPerformance.log(['name', 'value', 'timing']);
+      jsnpp.log(['name', 'value', 'timing']);
     }, 2000);
   }
 
   componentDidMount() {
-    const track = NPerformance.start('fetch-posts', 'BlogListFetch');
+    const track = jsnpp.start('fetch-posts', 'BlogListFetch');
     fetch('http://10.0.2.2:8282/posts')
       .then(res => res.json())
       .then(resp => {
@@ -46,14 +46,20 @@ class BlogList extends React.Component {
   handleSelectPost = (data) => () => {
     this.handleAnotherBinding();
 
-    const track = NPerformance.start('for-loop', 'BlogListComponent');
+    const track = jsnpp.start('for-loop', 'BlogListComponent');
 
     /**
      * Let's fake a slow click here.
      */
+    const longClick = jsnpp.start('select-post-onclick', 'BlogListComponent', {
+      milliseconds: 50,
+    });
+    
     let values = [];
     for (let i = 0; i <= (10 * 1000000); i++) { values.push(i); }
+
     track.stop();
+    longClick.stop();
 
     this.setState({
       ...this.state,
@@ -61,7 +67,7 @@ class BlogList extends React.Component {
     });
 
     const ViewName = 'BlogView'
-    NPerformance.start(`transition-to-${ViewName}`);
+    jsnpp.start(`transition-to-${ViewName}`);
     this.props.navigation.navigate(ViewName, { ...data });
   }
 
