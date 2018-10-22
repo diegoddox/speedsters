@@ -16,7 +16,7 @@ cd jsnp
 Run the setup script to install the dependencies & run tests.
 
 ```
-yarn install
+yarn install --ignore-engines
 yarn start
 ```
 
