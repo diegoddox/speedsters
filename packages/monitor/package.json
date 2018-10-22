@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "start": "concurrently 'BROWSER=none yarn start:dev-server' 'npm run wait:localhost && npm run start:electron' 'npm run watch:electron'",
+    "start": "concurrently \"yarn start:dev-server\" \"npm run wait:localhost && npm run start:electron\" \"npm run watch:electron\"",
     "wait:localhost": "wait-on http://localhost:1337",
     "start:dev-server": "cd renderer && npm start",
     "start:electron": "electron .",

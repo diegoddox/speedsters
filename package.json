@@ -1,9 +1,9 @@
 {
   "scripts": {
-    "start": "concurrently 'yarn run start:core' 'yarn run start:monitor' 'yarn run start:example-native'",
+    "start": "concurrently \"yarn run start:core\" \"yarn run start:monitor\" \"yarn run start:example-native\" ",
     "start:example-native": "cd examples/native && yarn start",
     "start:example-web-app": "cd examples/webapp && yarn start",
-    "start:examples": "concurrently 'yarn run start:example-web-app' 'yarn run start:example-native'",
+    "start:examples": "concurrently \"yarn run start:example-web-app\" \"yarn run start:example-native\"",
     "start:electron:monitor": "cd packages/monitor && yarn run start:electron",
     "start:electron:watch": "cd packages/monitor && yarn run watch:electron",
     "start:core": "cd packages/core && yarn start",
