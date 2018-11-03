@@ -15,8 +15,5 @@
     "index.d.ts"
   ],
   "homepage": "https://github.com/diegoddox/speedsters#readme",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "description": ""
 }
