@@ -81,7 +81,7 @@ class List extends React.Component<Props, {}> {
      */
     Object.keys(this.performanceTitleRefs).forEach((key: any) => {
       const current: HTMLDivElement = this.performanceTitleRefs[key];
-      if (current.style.position === 'fixed') {
+      if (current && current.style.position === 'fixed') {
         const titleBarHeight = this.props.quickSearchIsOpen ? TITLE_BAR_EXPANDED_HEIGHT : TITLE_BAR_HEIGHT;
         current.style.top = titleBarHeight;
       }
