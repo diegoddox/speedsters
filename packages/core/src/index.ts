@@ -1,5 +1,8 @@
 import { CreateSocketOptions } from '@speedsters/type';
+
+export { default as denormalize } from './denormalize';
 export { createSocket, Socket } from './socket';
+
 
 export function connect(options: CreateSocketOptions, connections: Function[]) {
   if (Array.isArray(connections)) {
