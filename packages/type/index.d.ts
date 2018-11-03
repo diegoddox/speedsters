@@ -26,7 +26,7 @@ export type StartPerformanceOptions = {
 }
 
 export type PerformanceData = {
-  [x: string]: BasePerformanceData | PerformanceData | number | string | null;
+  [x: string]: BasePerformanceData | PerformanceData;
 }
 
 type ReactData = {
