@@ -9,12 +9,12 @@ In your main/root react file import `@speedsters/react` and initiate the connect
 ```tsx
 ...
 import ReactDOM from 'react-dom';
-import jsnpr from '@speedsters/react';
+import sreact from '@speedsters/react';
 
 const connectionOptions = {
   name: 'My Application name',
 };
-jsnpr.connect(connectionOptions);
+sreact.connect(connectionOptions);
 
 ```
 
@@ -22,7 +22,7 @@ jsnpr.connect(connectionOptions);
 ```tsx
 ...
 import { AppRegistry, Platform} from 'react-native';
-import jsnpr from '@speedsters/react';
+import sreact from '@speedsters/react';
 
 const connectionOptions = {
   name: 'My Application name',
@@ -43,7 +43,7 @@ const connectionOptions = {
 };
 
 
-jsnpr.connect(connectionOptions);
+sreact.connect(connectionOptions);
 ```
 
 #### Tracking
@@ -52,7 +52,7 @@ of you react/react-native class
 
 ```jsx
 import React from 'react';
-import jsnpr from '@speedsters/react';
+import sreact from '@speedsters/react';
 
 export default class App extends React.Component<Props, State> {
   constructor(props) {
@@ -74,11 +74,11 @@ export default class App extends React.Component<Props, State> {
       milliseconds: 16;
     };
 
-    jsnpr.component(this, options);
+    sreact.component(this, options);
 
     /*
      * Because this method is been bind on the constructor 
-     * it will be measure by the Jsnpr.component.
+     * it will be measure by the sreact.component.
      * 
      * NOTE: Arrow function will not be measured.
      */

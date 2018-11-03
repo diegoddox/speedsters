@@ -6,13 +6,13 @@ A simple way of tracking your javascript app speed.
 In your main/root js file import `@speedsters/react` and initiate the connection.
 
 ```js
-import jsnpp from '@speedsters/performance';
+import sperformance from '@speedsters/performance';
 
 const connectionOptions = {
   name: 'My Application name',
 };
 
-jsnpp.connect(connectionOptions);
+sperformance.connect(connectionOptions);
 
 ```
 
@@ -20,10 +20,10 @@ jsnpp.connect(connectionOptions);
 Once you've connected you're ready to go.
 
 ```js
-import jsnpp from '@speedsters/performance';
+import sperformance from '@speedsters/performance';
 
 /*
- * jsnpp.start(@key, @group, @options);
+ * sperformance.start(@key, @group, @options);
  * @key: The performance name.
  * @group: You can group multiple @keys.
  * @options: { milliseconds } // how long this performance should tale.
@@ -34,22 +34,22 @@ import jsnpp from '@speedsters/performance';
  * object return a stop() method that you can use
  * to stop the performance
 */
-const track_a = jsnpp.start('initial-loading');
+const track_a = sperformance.start('initial-loading');
 track_a.stop();
 
 
 // You can just call start/stop as well
 const homePageGroupKeyName = 'home-page';
-jsnpp.start('loop-data', homePageGroupKeyName);
-jsnpp.stop('loop-data-2', homePageGroupKeyName);
+sperformance.start('loop-data', homePageGroupKeyName);
+sperformance.stop('loop-data-2', homePageGroupKeyName);
 
-const track_c = jsnpp.start('page-transition', homePageGroupKeyName, {
+const track_c = sperformance.start('page-transition', homePageGroupKeyName, {
   milliseconds: 1000,
 });
 track_c.stop();
 
 
-const track_d = jsnpp.start('image-load', null, {
+const track_d = sperformance.start('image-load', null, {
   milliseconds: 2000,
 });
 
