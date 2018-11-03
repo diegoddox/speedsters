@@ -42,6 +42,7 @@ module.exports = {
       Common: path.resolve(__dirname, '../src/Common/'),
       Containers: path.resolve(__dirname, '../src/Containers/'),
       Utils: path.resolve(__dirname, '../src/Utils/'),
+      denormalize: path.resolve(__dirname, '../../../core/src/denormalize/'),
     }
   },
   plugins: [
