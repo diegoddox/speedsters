@@ -1,3 +1,5 @@
+import denormalizeData from 'denormalize';
+
 export const createReducer = (initialState: any, fnMap: {[key: string]: (state: any, payload: any, mainState?: any) => any}) => {
   return (state = initialState, { type, payload}: any, mainState?: any) => {
     const handle = fnMap[type];
@@ -38,49 +40,6 @@ export const denormalize = (performances: any, performanceName: string) => {
   }
 
   return data;
-}
-
-export const denormalizeData = (performanceData: any) => {
-  if (!performanceData) {
-    return null;
-  }
-
-  return Object.keys(performanceData).reduce((data: any[], key: string) => {
-    const obj = performanceData[key];
-
-    /**
-     * Check if is an object and we
-     * have the time property
-     */
-    if (obj && typeof obj === 'object' && obj.hasOwnProperty('value')) {
-      data.push({
-        name: key,
-        ...obj,
-      });
-
-    /**
-     * Else try again but add it to a property data
-     * that should be an array of objects.
-     */
-    } else if (obj && typeof obj === 'object') {
-      const newData: any = {
-        name: key,
-        data: denormalizeData(obj),
-      };
-
-      /**
-       * Check if the object is a 
-       * reactComponent and if so
-       * add a flag.
-       */
-      if (obj.renderCount) {
-        newData.isReactComponent = true;
-      }
-
-      data.push(newData);
-    }
-    return data;
-  }, []);
 }
 
 export const getValueFromPixel = (value: string): number  => Number((value as string).replace('px', ''));

@@ -15,8 +15,7 @@ import {
   isObject
 } from '../utils';
 
-import { createSocket } from '@speedsters/core';
-import denormalize from '../utils/denormalize';
+import { createSocket, denormalize } from '@speedsters/core';
 
 const DEFAULT_OPTIONS: CreateSocketOptions = {
   name: 'Nice Performance',
@@ -54,7 +53,7 @@ export class NicePerformance implements IPerformance {
         if (isObject(msg) && msg.type && msg.type === 'SOCKET:CLIENT_MONITOR_CONNECTED') {
           socket.sendPerformance(this.data);
         }
-      } catch {}
+      } catch (e) {}
     };
 
     // Connect with the monitor
