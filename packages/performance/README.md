@@ -1,12 +1,12 @@
-# JSNP
+# Speedsters
 
 A simple way of tracking your javascript app speed.
 
 #### SETUP
-In your main/root js file import `@jsnp/react` and initiate the connection.
+In your main/root js file import `@speedsters/react` and initiate the connection.
 
 ```js
-import jsnpp from '@jsnp/performance';
+import jsnpp from '@speedsters/performance';
 
 const connectionOptions = {
   name: 'My Application name',
@@ -20,7 +20,7 @@ jsnpp.connect(connectionOptions);
 Once you've connected you're ready to go.
 
 ```js
-import jsnpp from '@jsnp/performance';
+import jsnpp from '@speedsters/performance';
 
 /*
  * jsnpp.start(@key, @group, @options);

@@ -1,20 +1,20 @@
 {
-  "name": "@jsnp/type",
-  "version": "0.0.3",
+  "name": "@speedsters/type",
+  "version": "0.0.1",
   "types": "./index.d.ts",
   "author": "Diego Oliveira <diegoddox@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/diegoddox/jsnp.git"
+    "url": "git+ssh://git@github.com/diegoddox/speedsters.git"
   },
   "bugs": {
-    "url": "https://github.com/diegoddox/jsnp/issues"
+    "url": "https://github.com/diegoddox/speedsters/issues"
   },
   "files": [
     "index.d.ts"
   ],
-  "homepage": "https://github.com/diegoddox/jsnp#readme",
+  "homepage": "https://github.com/diegoddox/speedsters#readme",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

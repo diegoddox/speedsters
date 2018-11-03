@@ -38,7 +38,7 @@ export const flattenArray = (data: any[]) => {
 
 export const logData = (data: any[] | null, tableFilter?: string[]) => {
   if (!data) {
-    return console.log('@jsnp/performance: there is not performance to log at the moment.');
+    return console.log('@speedsters/performance: there is not performance to log at the moment.');
   }
 
   const flattened = flattenArray(data);
@@ -58,10 +58,10 @@ export const performanceNow = () => {
 
 export const isValidStopOptions = (key: string, group?: string, data?: any): boolean => {
   if (group && !data || group && !data[key]) {
-    console.warn(`@jsnp/performance: You\'re trying to stop a key:(${key}) in a group:${group} that doesn\'t exist.`);
+    console.warn(`@speedsters/performance: You\'re trying to stop a key:(${key}) in a group:${group} that doesn\'t exist.`);
     return false;
   } else if (key && !group && !data) {
-    console.warn(`@jsnp/performance: You\'re trying to stop a key:(${key}) that doesn\'t exists.`);
+    console.warn(`@speedsters/performance: You\'re trying to stop a key:(${key}) that doesn\'t exists.`);
     return false;
   }
   return true;
@@ -69,11 +69,11 @@ export const isValidStopOptions = (key: string, group?: string, data?: any): boo
 
 export const isValidStartOptions = (key: string, group?: string, options?: any): void => {
   if (key && typeof key !== 'string' || group && typeof group !== 'string') {
-    console.warn('@jsnp/performance: start performance. key/group must be a string');
+    console.warn('@speedsters/performance: start performance. key/group must be a string');
   }
   
   if (options !== undefined && options !== null && typeof options !== 'object') {
-    console.warn('@jsnp/performance: start performance. options must be an object');
+    console.warn('@speedsters/performance: start performance. options must be an object');
   }
 }
 

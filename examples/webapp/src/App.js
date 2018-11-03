@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import jsnpr from '@jsnp/react';
-import jsnpp from '@jsnp/performance';
+import jsnpr from '@speedsters/react';
+import jsnpp from '@speedsters/performance';
 
 class App extends Component {
   constructor(props) {

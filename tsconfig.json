@@ -3,8 +3,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@jsnp/core": ["./packages/core/src"],
-      "@jsnp/type": ["./packages/type"]
+      "@speedsters/core": ["./packages/core/src"],
+      "@speedsters/type": ["./packages/type"]
     },
     "noEmit": true
   },

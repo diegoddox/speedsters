@@ -1,4 +1,4 @@
-import { PerformanceData } from '@jsnp/type';
+import { PerformanceData } from '@speedsters/type';
 
 export default function denormalize(performanceData: PerformanceData) {
   if (!performanceData) {

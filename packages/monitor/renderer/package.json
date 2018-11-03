@@ -1,6 +1,6 @@
 {
-  "name": "@jsnp/monitor-renderer",
-  "version": "0.0.1",
+  "name": "speedsters-renderer",
+  "version": "0.0.0",
   "scripts": {
     "start": "webpack-dev-server --config config/webpack.dev.js",
     "build": "./node_modules/.bin/webpack -p --progress --mode production --config config/webpack.prod.js"

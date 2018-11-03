@@ -1,4 +1,4 @@
-import jsnpReact, { RENDER_COUNT } from '.';
+import IReact, { RENDER_COUNT } from '.';
 
 it('should run ReactComponent performance in a Class and rendered two times', () => {
   class TheNiceComponent {

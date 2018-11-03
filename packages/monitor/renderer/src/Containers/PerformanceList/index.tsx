@@ -92,7 +92,7 @@ export class PerformanceList extends React.Component<Props, {}> {
             <Logo />
             <InfoHolder>
               <Info>
-                Looks like we're not able to connect to any @jsnp package, reload your application in order to re-connect
+                Looks like we're not able to connect to any @speedsters package, reload your application in order to re-connect
               </Info>
             </InfoHolder>
           </>

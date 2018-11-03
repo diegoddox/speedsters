@@ -2,29 +2,29 @@
 # yarn lockfile v1
 
 
-"@jsnp/core@*":
+"@speedsters/core@*":
   version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@jsnp/core/-/core-0.0.3.tgz#71a798802ca402a6cf776896210f43c8e243a038"
+  resolved "https://registry.yarnpkg.com/@speedsters/core/-/core-0.0.3.tgz#71a798802ca402a6cf776896210f43c8e243a038"
   dependencies:
-    "@jsnp/type" "*"
+    "@speedsters/type" "*"
 
-"@jsnp/performance@*":
+"@speedsters/performance@*":
   version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@jsnp/performance/-/performance-0.0.2.tgz#48e1552b238552ba36b656320ff655da5da5a05f"
+  resolved "https://registry.yarnpkg.com/@speedsters/performance/-/performance-0.0.2.tgz#48e1552b238552ba36b656320ff655da5da5a05f"
   dependencies:
-    "@jsnp/core" "*"
-    "@jsnp/type" "*"
+    "@speedsters/core" "*"
+    "@speedsters/type" "*"
 
-"@jsnp/react@*":
+"@speedsters/react@*":
   version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@jsnp/react/-/react-0.0.2.tgz#0e7e821eb3a55dec1360601e51f47e276b0acfef"
+  resolved "https://registry.yarnpkg.com/@speedsters/react/-/react-0.0.2.tgz#0e7e821eb3a55dec1360601e51f47e276b0acfef"
   dependencies:
-    "@jsnp/core" "*"
-    "@jsnp/type" "*"
+    "@speedsters/core" "*"
+    "@speedsters/type" "*"
 
-"@jsnp/type@*":
+"@speedsters/type@*":
   version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@jsnp/type/-/type-0.0.2.tgz#e4e948be53b523b109aff4180e7cddf823110d9e"
+  resolved "https://registry.yarnpkg.com/@speedsters/type/-/type-0.0.2.tgz#e4e948be53b523b109aff4180e7cddf823110d9e"
 
 abab@^1.0.3:
   version "1.0.4"

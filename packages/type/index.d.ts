@@ -58,9 +58,9 @@ export type CreateSocketOptions = {
   Platform?: any;
 }
 
-export declare interface JsnpPerformance {
+export declare interface IPerformance {
   data: PerformanceData;
-  connect(options: CreateSocketOptions): JsnpPerformance;
+  connect(options: CreateSocketOptions): IPerformance;
   start(key: string, group?: string, options?: StartPerformanceOptions): StartReturnedObject;
   stop(key: string, group?: string): void | null;
   clear(): void;
@@ -75,8 +75,8 @@ export declare interface CoreSocket {
   sendPerformance(data: object): void;
 }
 
-export declare interface JsnpReact {
-  connect(options: CreateSocketOptions): JsnpReact;
+export declare interface IReact {
+  connect(options: CreateSocketOptions): IReact;
   component(options: ReactComponentOptions): void;
   data: any;
 }

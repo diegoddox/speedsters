@@ -1,7 +1,6 @@
 {
-  "name": "jsnp",
+  "name": "speedsters",
   "version": "0.0.1",
-  "description": "",
   "main": "dist/index.js",
   "scripts": {
     "start": "concurrently \"yarn start:dev-server\" \"npm run wait:localhost && npm run start:electron\" \"npm run watch:electron\"",
@@ -23,8 +22,8 @@
   "license": "ISC",
   "homepage": "./",
   "build": {
-    "appId": "com.jsnp.app",
-    "productName": "Jsnp",
+    "appId": "com.speedsters.app",
+    "productName": "speedsters",
     "electronDownload": {
       "cache": ".electron.cache"
     },

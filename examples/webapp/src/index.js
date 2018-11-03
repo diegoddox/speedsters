@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import * as NPCore from '@jsnp/core';
-import jsnpr from '@jsnp/react';
-import jsnpp from '@jsnp/performance';
+import * as NPCore from '@speedsters/core';
+import jsnpr from '@speedsters/react';
+import jsnpp from '@speedsters/performance';
 
 const OPTIONS = {
   name: 'Web React App',

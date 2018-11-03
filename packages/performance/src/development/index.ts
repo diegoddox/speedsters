@@ -2,10 +2,10 @@ import {
   CreateSocketOptions,
   PerformanceData,
   StartPerformanceOptions,
-  JsnpPerformance,
+  IPerformance,
   BasePerformanceData,
   CoreSocket
-} from '@jsnp/type';
+} from '@speedsters/type';
 
 import {
   performanceNow,
@@ -15,7 +15,7 @@ import {
   isObject
 } from '../utils';
 
-import { createSocket } from '@jsnp/core';
+import { createSocket } from '@speedsters/core';
 import denormalize from '../utils/denormalize';
 
 const DEFAULT_OPTIONS: CreateSocketOptions = {
@@ -24,7 +24,7 @@ const DEFAULT_OPTIONS: CreateSocketOptions = {
 
 let socket: CoreSocket;
 
-export class NicePerformance implements JsnpPerformance {
+export class NicePerformance implements IPerformance {
   private _data: PerformanceData | any = {};
   private hasInitiateConnect: boolean = false;
   private options: CreateSocketOptions = {};
@@ -96,7 +96,7 @@ export class NicePerformance implements JsnpPerformance {
       stop: () => {
         const performance: object = this.stop(key, group);
         if (options.verbose) {
-          console.log(`@jsnp/performance: ${key} ${performance}`);
+          console.log(`@speedsters/performance: ${key} ${performance}`);
         }
         return performance;
       },

@@ -15,8 +15,7 @@
     "build:core": "cd packages/core && yarn run build",
     "build:react": "cd packages/react && yarn run build",
     "build:performance": "cd packages/performance && yarn run build",
-    "build:@jsnp": "yarn run build:core && yarn run build:react && yarn run build:performance",
-    "prerelease": "lerna publish --npm-tag=next",
+    "build:@speedsters": "yarn run build:core && yarn run build:react && yarn run build:performance",
     "publish:type": "cd packages/type && npm publish --access public",
     "publish:core": "cd packages/core && npm publish --access public",
     "publish:react": "cd packages/react && npm publish --access public",
@@ -37,7 +36,7 @@
     ]
   },
   "keywords": [
-    "jsnp performance",
+    "speedsters performance",
     "performance",
     "react-native test",
     "react-native test performance",

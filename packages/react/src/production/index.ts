@@ -1,6 +1,6 @@
-import { JsnpReact } from '@jsnp/type';
+import { IReact } from '@speedsters/type';
 
-const nicePerformance: JsnpReact = {
+const nicePerformance: IReact = {
   connect: () => nicePerformance,
   component: () => {},
   data: {},

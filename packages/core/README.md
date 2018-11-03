@@ -1,1 +1,1 @@
-# JSNP [https://github.com/diegoddox/jsnp](https://github.com/diegoddox/jsnp) for details.
+# speedsters [https://github.com/diegoddox/speedsters](https://github.com/diegoddox/speedsters) for details.

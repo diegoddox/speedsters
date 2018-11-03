@@ -3,8 +3,8 @@ import { View, FlatList, TouchableOpacity } from 'react-native';
 import BlogListItem from './BlogListItem';
 import Header from '../../Common/Header';
 import styles from './styles';
-import jsnpp from '@jsnp/performance';
-import jsnpr from '@jsnp/react';
+import jsnpp from '@speedsters/performance';
+import jsnpr from '@speedsters/react';
 
 class BlogList extends React.Component {
   constructor(props) {

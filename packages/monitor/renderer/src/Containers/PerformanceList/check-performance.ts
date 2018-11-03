@@ -1,7 +1,7 @@
 import {
   RenderCount,
   BasePerformanceData
-} from '@jsnp/type';
+} from '@speedsters/type';
 import { hasPerformanceIssue } from 'Utils';
 
 type CheckPerformanceIssue = {

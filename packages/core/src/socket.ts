@@ -1,7 +1,7 @@
-import { CreateSocketOptions, CoreSocket } from '@jsnp/type';
+import { CreateSocketOptions, CoreSocket } from '@speedsters/type';
 
 const DEFAULT_OPTIONS: CreateSocketOptions = {
-  name: '@jsnp',
+  name: '@speedsters',
   host: 'localhost',
   port: 1338,
   secure: false,
@@ -85,7 +85,7 @@ export class Socket implements CoreSocket{
   }
 
   public sendPerformance(data: object) {
-    // Use this to send data to the @jsnp/monitor.
+    // Use this to send data to the @speedsters/monitor.
     this.send({
       applicationName: this.options.name,
       type: 'SOCKET:PERFORMANCE_DATA',

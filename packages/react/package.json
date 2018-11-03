@@ -1,28 +1,27 @@
 {
-  "name": "@jsnp/react",
+  "name": "@speedsters/react",
   "version": "0.0.2",
   "description": "A simple way of testing your react application performance",
   "main": "./cjs/index.js",
-  "esnext": "./esnext/index.js",
   "types": "./types/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/diegoddox/jsnp.git"
+    "url": "git+ssh://git@github.com/diegoddox/speedsters.git"
   },
   "bugs": {
-    "url": "https://github.com/diegoddox/jsnp/issues"
+    "url": "https://github.com/diegoddox/speedsters/issues"
   },
   "scripts": {
     "start": "tsc -w",
-    "build": "yarn run clean && tsc -p tsconfig.build.json && tsc -p tsconfig.build.c.json",
+    "build": "yarn run clean && tsc -p tsconfig.build.json",
     "prepare": "yarn run build",
     "clean": "rimraf esnext types cjs",
     "test": "jest"
   },
   "author": "Diego Oliveira <diegoddox@gmail.com>",
   "dependencies": {
-    "@jsnp/core": "*",
-    "@jsnp/type": "*"
+    "@speedsters/core": "*",
+    "@speedsters/type": "*"
   },
   "license": "MIT",
   "jest": {
@@ -44,5 +43,5 @@
     "cjs",
     "types/"
   ],
-  "homepage": "https://github.com/diegoddox/jsnp#readme"
+  "homepage": "https://github.com/diegoddox/speedsters#readme"
 }

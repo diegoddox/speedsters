@@ -1,13 +1,13 @@
 import {
   CreateSocketOptions,
-  JsnpReact as JsnpReactType,
+  IReact as JsnpReactType,
   ReactComponentData,
   RenderCountHistory,
   ReactComponentOptions,
   CoreSocket
-} from '@jsnp/type';
+} from '@speedsters/type';
 
-import { createSocket } from '@jsnp/core';
+import { createSocket } from '@speedsters/core';
 import { performanceNow } from '../utils';
 
 export const RENDER_COUNT = 'renderCount';
@@ -25,7 +25,7 @@ const RENDER = 'render';
 
 let socket: CoreSocket;
 
-export class JsnpReact implements JsnpReactType {
+export class IReact implements JsnpReactType {
   private _data: ReactComponentData | any = {};
   private hasInitiateConnection: boolean = false;
 
@@ -52,7 +52,7 @@ export class JsnpReact implements JsnpReactType {
     const proto = Object.getPrototypeOf(_this);
 
     if (!proto) {
-      return console.warn('@jsnp/react: looks like you\'re trying to run jsnpr.component in an anonymous component.');
+      return console.warn('@speedsters/react: looks like you\'re trying to run jsnpr.component in an anonymous component.');
     }
 
     // Get the React Class/Component name.
@@ -169,7 +169,7 @@ export class JsnpReact implements JsnpReactType {
           };
 
           if (verbose) {
-            console.log(`@jsnp/react: ${COMPONENT_NAME} ${performanceData}`);
+            console.log(`@speedsters/react: ${COMPONENT_NAME} ${performanceData}`);
           }
 
           /**
@@ -191,5 +191,5 @@ export class JsnpReact implements JsnpReactType {
   }
 }
 
-const jsnpr = new JsnpReact();
+const jsnpr = new IReact();
 export default jsnpr;

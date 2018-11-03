@@ -1,15 +1,15 @@
-# JSNP
+# Speedsters
 
 A simple way of tracking your react/react-native render/methods speed.
 
 #### SETUP
-In your main/root react file import `@jsnp/react` and initiate the connection.
+In your main/root react file import `@speedsters/react` and initiate the connection.
 
 ##### React-js
 ```tsx
 ...
 import ReactDOM from 'react-dom';
-import jsnpr from '@jsnp/react';
+import jsnpr from '@speedsters/react';
 
 const connectionOptions = {
   name: 'My Application name',
@@ -22,7 +22,7 @@ jsnpr.connect(connectionOptions);
 ```tsx
 ...
 import { AppRegistry, Platform} from 'react-native';
-import jsnpr from '@jsnp/react';
+import jsnpr from '@speedsters/react';
 
 const connectionOptions = {
   name: 'My Application name',
@@ -52,7 +52,7 @@ of you react/react-native class
 
 ```jsx
 import React from 'react';
-import jsnpr from '@jsnp/react';
+import jsnpr from '@speedsters/react';
 
 export default class App extends React.Component<Props, State> {
   constructor(props) {
@@ -102,5 +102,5 @@ export default class App extends React.Component<Props, State> {
 ```
 
 #### THAT'S IT
-And you're ready to rock! open the jsnp desktop application reload your
+And you're ready to rock! open the speedsters desktop application reload your
 react/react-native app and all your performance measurement will show there.

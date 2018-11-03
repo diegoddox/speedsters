@@ -1,6 +1,6 @@
-import { JsnpPerformance } from '@jsnp/type';
+import { IPerformance } from '@speedsters/type';
 
-const nicePerformance: JsnpPerformance = {
+const nicePerformance: IPerformance = {
   data: {},
   connect: () => nicePerformance,
   start: () => ({ stop: () => null }),
@@ -8,7 +8,7 @@ const nicePerformance: JsnpPerformance = {
   clear: () => {},
   createGlobalLog: () => {},
   log: () => {
-    console.log('Jsnp is on production mode.');
+    console.log('speedsters is on production mode.');
   },
 };
 
