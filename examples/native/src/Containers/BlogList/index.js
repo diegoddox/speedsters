@@ -3,8 +3,8 @@ import { View, FlatList, TouchableOpacity } from 'react-native';
 import BlogListItem from './BlogListItem';
 import Header from '../../Common/Header';
 import styles from './styles';
-import jsnpp from '@speedsters/performance';
-import jsnpr from '@speedsters/react';
+import sperformance from '@speedsters/performance';
+import sreact from '@speedsters/react';
 
 class BlogList extends React.Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class BlogList extends React.Component {
 
     this.handleAnotherBinding = this.handleAnotherBinding.bind(this);
     
-    jsnpr.component(this, {
+    sreact.component(this, {
       excludes: {
         handleAnotherBinding: true,
       },
@@ -25,12 +25,12 @@ class BlogList extends React.Component {
     });
 
     setTimeout(() => {
-      jsnpp.log(['name', 'value', 'timing']);
+      sperformance.log(['name', 'value', 'timing']);
     }, 2000);
   }
 
   componentDidMount() {
-    const track = jsnpp.start('fetch-posts', 'BlogListFetch');
+    const track = sperformance.start('fetch-posts', 'BlogListFetch');
     fetch('http://10.0.2.2:8282/posts')
       .then(res => res.json())
       .then(resp => {
@@ -46,12 +46,12 @@ class BlogList extends React.Component {
   handleSelectPost = (data) => () => {
     this.handleAnotherBinding();
 
-    const track = jsnpp.start('for-loop', 'BlogListComponent');
+    const track = sperformance.start('for-loop', 'BlogListComponent');
 
     /**
      * Let's fake a slow click here.
      */
-    const longClick = jsnpp.start('select-post-onclick', 'BlogListComponent', {
+    const longClick = sperformance.start('select-post-onclick', 'BlogListComponent', {
       milliseconds: 50,
     });
     
@@ -67,7 +67,7 @@ class BlogList extends React.Component {
     });
 
     const ViewName = 'BlogView'
-    jsnpp.start(`transition-to-${ViewName}`);
+    sperformance.start(`transition-to-${ViewName}`);
     this.props.navigation.navigate(ViewName, { ...data });
   }
 

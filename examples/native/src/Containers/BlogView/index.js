@@ -1,18 +1,18 @@
 import React from 'react';
 import { View, Text, Image, ScrollView } from 'react-native';
-import NPerformance from '@jsnp/performance';
-import NPReact from '@jsnp/react';
+import sperformance from '@speedsters/performance';
+import sreact from '@speedsters/react';
 import styles from './styles';
 import Title from '../BlogList/Title';
 
 class BlogView extends React.Component {
   constructor(props) {
     super(props);
-    NPReact.component(this);
+    sreact.component(this);
   }
 
   componentDidMount() {
-    NPerformance.stop(`transition-to-BlogView`);
+    sperformance.stop(`transition-to-BlogView`);
   }
 
   render() {

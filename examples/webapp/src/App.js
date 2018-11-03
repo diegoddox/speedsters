@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import jsnpr from '@speedsters/react';
-import jsnpp from '@speedsters/performance';
+import sreact from '@speedsters/react';
+import sperformance from '@speedsters/performance';
 
 class App extends Component {
   constructor(props) {
     super(props);
 
-    jsnpr.component(this);
+    sreact.component(this);
   }
 
   componentDidMount() {
-    const mount = jsnpp.start('will-mount-timeout', null, {
+    const mount = sperformance.start('will-mount-timeout', null, {
       milliseconds: 1000
     });
+
     setTimeout(() => {
       mount.stop();
 
