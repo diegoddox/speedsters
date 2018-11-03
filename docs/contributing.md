@@ -9,8 +9,8 @@ Make sure you've got `yarn` (1.+) and `node` (8.5+).
 Clone & switch to the right branch.
 
 ```
-git clone git@github.com:diegoddox/jsnp.git
-cd jsnp
+git clone git@github.com:diegoddox/speedster.git
+cd speedster
 ```
 
 Run the setup script to install the dependencies & run tests.
