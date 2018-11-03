@@ -3,7 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@speedsters/core": ["./packages/core/src"],
+      "@speedsters/*": ["./packages/*/src"],
       "@speedsters/type": ["./packages/type"]
     },
     "noEmit": true
