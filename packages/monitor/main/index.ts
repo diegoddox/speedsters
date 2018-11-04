@@ -11,7 +11,7 @@ import * as windowStateKeeper from 'electron-window-state';
 const isDev = !app.isPackaged;
 
 if (isDev) {
-  // TODO: this is not working propely.
+  // TODO: this is not working properly.
   require('electron-reload')(__dirname);
 }
 
@@ -29,14 +29,8 @@ const wss = new WebSocket.Server({ port: 1338 }, () => console.log('Ws server st
 
 wss.on('connection', (ws) => {
   (ws as any).isAlive = true;
-
-  ws.on('pong', () => {
-    (ws as any).isAlive = true;
-  });
-
-  ws.on('message', (data: any) => {
-    (wss as any).broadcast(data, ws);
-  });
+  ws.on('pong', () => (ws as any).isAlive = true);
+  ws.on('message', (data: any) => (wss as any).broadcast(data, ws));
 });
 
 wss.on('error', () => clearInterval(socketPingPongInterval));
@@ -106,8 +100,8 @@ function handleCloseWindow() {
   if (process.platform !== 'darwin') {
     clearInterval(socketPingPongInterval);
     app.quit();
-  } else if (process.platform === 'darwin' && mainWindow) {
-    mainWindow.close();
+  } else {
+    mainWindow.hide();
   }
 }
 
@@ -123,7 +117,7 @@ ipcMain.on('focus-main-window', () => {
   }
 });
 
-const toggleAvailableSpace = () => {
+ipcMain.on('toggle-available-space', () => {
   /**
    * .isMaximized() is not working on windows.
    * https://github.com/electron/electron/issues/9092
@@ -136,13 +130,13 @@ const toggleAvailableSpace = () => {
   } else {
     mainWindow.unmaximize();
   }
-};
-
-ipcMain.on('toggle-available-space', toggleAvailableSpace);
+});
 
 app.on('activate', () => {
   if (mainWindow === null) {
     mainWindow = createWindow();
+  } else {
+    mainWindow.show();
   }
 });
 

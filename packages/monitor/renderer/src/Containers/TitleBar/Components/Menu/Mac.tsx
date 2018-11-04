@@ -90,7 +90,7 @@ export default class MacMenu extends React.PureComponent<{}, MenuState> {
 
   handleFillAvailableSpace(e: any) {
     e.preventDefault();
-    menuHelpers.fillAvailableSpace();
+    menuHelpers.toggleAvailableSpace();
   }
 
   render() {
