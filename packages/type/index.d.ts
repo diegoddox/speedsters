@@ -40,7 +40,7 @@ export type ReactComponentData = {
 
 export type ReactComponentOptions = {
   excludes?: {
-    [x: string]: boolean,
+    [x: string]: boolean | any,
   },
   milliseconds?: number | null;
   verbose?: boolean;
