@@ -106,8 +106,8 @@ function handleCloseWindow() {
   if (process.platform !== 'darwin') {
     clearInterval(socketPingPongInterval);
     app.quit();
-  } else if (process.platform === 'darwin' && mainWindow) {
-    mainWindow.close();
+  } else {
+    mainWindow.hide();
   }
 }
 
@@ -143,6 +143,8 @@ ipcMain.on('toggle-available-space', toggleAvailableSpace);
 app.on('activate', () => {
   if (mainWindow === null) {
     mainWindow = createWindow();
+  } else {
+    mainWindow.show();
   }
 });
 
