@@ -73,6 +73,7 @@ function createWindow () {
     backgroundColor: '#2e3b4e',
     webPreferences: {
       webSecurity: false,
+      partition: 'persist:main'
     },
   });
 

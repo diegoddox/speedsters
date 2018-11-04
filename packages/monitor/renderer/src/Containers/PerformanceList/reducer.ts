@@ -16,7 +16,7 @@ export type PerformanceReducerState = {
   selectedPerformance: string | null;
 }
 
-const initialState: PerformanceReducerState = {
+export const initialState: PerformanceReducerState = {
   byName: {},
   applicationNames: [],
   selectedPerformance: ALL_PERFORMANCES,

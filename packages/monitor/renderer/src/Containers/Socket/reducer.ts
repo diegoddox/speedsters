@@ -19,7 +19,7 @@ export type SocketReducerState = {
   isConnected?: boolean;
 }
 
-const initialState = {
+export const initialState = {
   isConnected: false,
 };
 

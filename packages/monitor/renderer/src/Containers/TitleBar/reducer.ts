@@ -15,7 +15,7 @@ export type TitleBarState = {
   quickSearchText: string;
 }
 
-const initialState: TitleBarState = {
+export const initialState: TitleBarState = {
   openTopLeftMenu: false,
   displayPerformanceMenu: false,
   quickSearchIsOpen: false,

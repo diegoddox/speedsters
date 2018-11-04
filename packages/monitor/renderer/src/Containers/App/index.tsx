@@ -9,11 +9,23 @@ import configureStore from './configure-store';
 import { connectSocketAction } from '../Socket/reducer';
 import styles from 'Common/Styles';
 import './base.css';
+import { get, set } from '../../Storage';
 
-const store = configureStore();
+const  INITIAL_STATE = get('redux-state');
+const store = configureStore(INITIAL_STATE);
+
 const engine = new Styletron();
 
 store.dispatch(connectSocketAction);
+
+let timeout: any = null;
+
+store.subscribe(() => {
+  if (timeout) {
+    clearTimeout(timeout);
+  }
+  timeout = setTimeout(() => set('redux-state', store.getState()), 500);
+});
 
 const Main = styled('div', {
   display: 'flex',

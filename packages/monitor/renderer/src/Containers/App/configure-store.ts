@@ -1,6 +1,7 @@
 import { createStore, applyMiddleware } from 'redux';
 import reducers from 'Common/Reducer';
 import socketMiddleWare from '../Socket/middleware';
+import State, { state as baseInitialState} from 'Common/State';
 
 const middleWares: Array<any> = [socketMiddleWare];
 
@@ -9,10 +10,16 @@ if (process.env.NODE_ENV === 'development') {
   middleWares.push(logger);
 }
 
-export default () => {
-  const store = createStore(
+export default (initialState?: State) => {
+  const reduxState = {
+    ...baseInitialState,
+    ...initialState,
+  };
+
+  const store = createStore<State, any, {}, {}>(
     reducers,
-    applyMiddleware(...middleWares)
+    reduxState,
+    applyMiddleware(...middleWares),
   );
 
   return store;
