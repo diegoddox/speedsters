@@ -1,6 +1,6 @@
 {
   "name": "@speedsters/performance",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A simple way of testing your application performance",
   "main": "./cjs/index.js",
   "types": "./types/development/index.d.ts",

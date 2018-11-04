@@ -1,6 +1,6 @@
-import { CreateSocketOptions, CoreSocket } from '@speedsters/type';
+import { ConnectionOptions, CoreSocket } from '@speedsters/type';
 
-const DEFAULT_OPTIONS: CreateSocketOptions = {
+const DEFAULT_OPTIONS: ConnectionOptions = {
   name: '@speedsters',
   host: 'localhost',
   port: 1338,
@@ -11,14 +11,14 @@ export class Socket implements CoreSocket{
   private socket: WebSocket | null = null;
   private isReady: boolean = false;
   private sendQueue: any[] = [];
-  private options: CreateSocketOptions = {};
+  private options: ConnectionOptions = {};
 
   constructor() {
     this.send = this.send.bind(this);
     this.sendPerformance = this.sendPerformance.bind(this);
   }
 
-  public configure(options: CreateSocketOptions = {}): Socket {
+  public configure(options: ConnectionOptions = {}): Socket {
     this.options = {
       ...DEFAULT_OPTIONS,
       ...options,
@@ -94,7 +94,7 @@ export class Socket implements CoreSocket{
   }
 }
 
-export function createSocket(config: CreateSocketOptions): CoreSocket {
+export function createSocket(config: ConnectionOptions): CoreSocket {
   const socket = new Socket();
   socket.configure(config);
   return socket;

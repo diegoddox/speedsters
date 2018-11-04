@@ -46,7 +46,7 @@ export type ReactComponentOptions = {
   verbose?: boolean;
 } 
 
-export type CreateSocketOptions = {
+export type ConnectionOptions = {
   name?: string;
   secure?: boolean;
   host?: string;
@@ -60,7 +60,7 @@ export type CreateSocketOptions = {
 
 export declare interface IPerformance {
   data: PerformanceData;
-  connect(options: CreateSocketOptions): IPerformance;
+  connect(options: ConnectionOptions): IPerformance;
   start(key: string, group?: string, options?: StartPerformanceOptions): StartReturnedObject;
   stop(key: string, group?: string): void | null;
   clear(): void;
@@ -69,14 +69,14 @@ export declare interface IPerformance {
 }
 
 export declare interface CoreSocket {
-  configure(options: CreateSocketOptions): CoreSocket;
+  configure(options: ConnectionOptions): CoreSocket;
   connect(): CoreSocket;
   send(data: object): void;
   sendPerformance(data: object): void;
 }
 
 export declare interface IReact {
-  connect(options: CreateSocketOptions): IReact;
+  connect(options: ConnectionOptions): IReact;
   component(options: ReactComponentOptions): void;
   data: any;
 }

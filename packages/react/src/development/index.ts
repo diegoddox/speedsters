@@ -1,5 +1,5 @@
 import {
-  CreateSocketOptions,
+  ConnectionOptions,
   IReact as JsnpReactType,
   ReactComponentData,
   RenderCountHistory,
@@ -37,7 +37,7 @@ export class IReact implements JsnpReactType {
     return this._data;
   }
 
-  public connect(options: CreateSocketOptions = {}) {
+  public connect(options: ConnectionOptions = {}) {
     // Flag the initialization
     this.hasInitiateConnection = true;
 

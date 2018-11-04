@@ -1,6 +1,6 @@
 {
   "name": "@speedsters/type",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "types": "./index.d.ts",
   "author": "Diego Oliveira <diegoddox@gmail.com>",
   "license": "MIT",

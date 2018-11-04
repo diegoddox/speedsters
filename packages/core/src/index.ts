@@ -1,10 +1,10 @@
-import { CreateSocketOptions } from '@speedsters/type';
+import { ConnectionOptions } from '@speedsters/type';
 
 export { default as denormalize } from './denormalize';
 export { createSocket, Socket } from './socket';
 
 
-export function connect(options: CreateSocketOptions, connections: Function[]) {
+export function connect(options: ConnectionOptions, connections: Function[]) {
   if (Array.isArray(connections)) {
     connections.forEach((connection) => {
       if (typeof connection === 'function') {

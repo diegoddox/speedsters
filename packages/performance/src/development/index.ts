@@ -1,5 +1,5 @@
 import {
-  CreateSocketOptions,
+  ConnectionOptions,
   PerformanceData,
   StartPerformanceOptions,
   IPerformance,
@@ -17,7 +17,7 @@ import {
 
 import { createSocket, denormalize } from '@speedsters/core';
 
-const DEFAULT_OPTIONS: CreateSocketOptions = {
+const DEFAULT_OPTIONS: ConnectionOptions = {
   name: 'Nice Performance',
 };
 
@@ -26,7 +26,7 @@ let socket: CoreSocket;
 export class NicePerformance implements IPerformance {
   private _data: PerformanceData | any = {};
   private hasInitiateConnect: boolean = false;
-  private options: CreateSocketOptions = {};
+  private options: ConnectionOptions = {};
 
   constructor() {
     this.connect = this.connect.bind(this);
@@ -37,7 +37,7 @@ export class NicePerformance implements IPerformance {
     return this._data;
   }
 
-  public connect(options: CreateSocketOptions = {}) {
+  public connect(options: ConnectionOptions = {}) {
 
     this.options = {
       ...DEFAULT_OPTIONS,
