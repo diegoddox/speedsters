@@ -1,8 +1,8 @@
 import { IPerformance } from '@speedsters/type';
 
-const nicePerformance: IPerformance = {
+const SPerformance: IPerformance = {
   data: {},
-  connect: () => nicePerformance,
+  connect: () => SPerformance,
   start: () => ({ stop: () => null }),
   stop: () => null,
   clear: () => {},
@@ -12,4 +12,4 @@ const nicePerformance: IPerformance = {
   },
 };
 
-export default nicePerformance;
+export default SPerformance;

@@ -23,7 +23,7 @@ const DEFAULT_OPTIONS: ConnectionOptions = {
 
 let socket: CoreSocket;
 
-export class NicePerformance implements IPerformance {
+export class SPerformance implements IPerformance {
   private _data: PerformanceData | any = {};
   private hasInitiateConnect: boolean = false;
   private options: ConnectionOptions = {};
@@ -164,6 +164,6 @@ export class NicePerformance implements IPerformance {
   }
 }
 
-const nicePerformance = new NicePerformance();
+const sperformance = new SPerformance();
 
-export default nicePerformance;
+export default sperformance;

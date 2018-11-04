@@ -1,9 +1,9 @@
 import { IReact } from '@speedsters/type';
 
-const nicePerformance: IReact = {
-  connect: () => nicePerformance,
+const SReact: IReact = {
+  connect: () => SReact,
   component: () => {},
   data: {},
 };
 
-export default nicePerformance;
+export default SReact;
