@@ -27,19 +27,23 @@ const Holder = styled('div', (props: HolderProps) => ({
   width: '100%',
   height: props.$quickSearchIsOpen ? TITLE_BAR_EXPANDED_HEIGHT : TITLE_BAR_HEIGHT,
   backgroundColor: globalStyles.color.secondary,
-  /**
-   * On windows -webkit-app-region is causing
-   * an issue where the user are not able to
-   * click on any button.
-   * 
-   * TODO: find work around.
-   */
-  // '-webkit-app-region': 'drag',
   position: 'relative',
   color: globalStyles.color.softWhite,
   transition: 'all 400ms',
   zIndex: 1,
 } as CSSType.Properties));
+
+/**
+ * Adding the -webkit-app-region css on the Holder component
+ * is preventing the user to click on any button that is
+ * inside the Holder
+ */
+
+const DragArea = styled('div', {
+  flex: 1,
+  height: '100%',
+  '-webkit-app-region': 'drag',
+} as CSSType.Properties);
 
 const ActionsHolder = styled('div', (props: HolderProps) => ({
   display: 'flex',
@@ -54,27 +58,43 @@ const ActionsHolder = styled('div', (props: HolderProps) => ({
   transform: props.$quickSearchIsOpen ? 'translate3d(0, -100px, 0)' : 'translate3d(0, 0, 0)',
 } as CSSType.Properties));
 
-const LeftMenuHolder = styled('div', {
+const LEFT_HOLDER_WITH = '90px';
+
+const leftRightBaseMenuStyle = {
   display: 'flex',
-  width: '20%',
   flexDirection: 'column',
-  padding: `0px ${globalStyles.mediumSpace}`,
+  justifyContent: 'center',
+  height: '100%',
+}
+
+const LeftMenuHolder = styled('div', {
+  ...leftRightBaseMenuStyle,
+  width: LEFT_HOLDER_WITH,
+  paddingLeft: globalStyles.mediumSpace,
+  '-webkit-app-region': 'drag',
 } as CSSType.Properties);
 
-const RightMenuHolder = styled('div', {
-  display: 'flex',
-  width: '20%',
-  flexDirection: 'column',
-  padding: `0px ${globalStyles.mediumSpace}`,
-} as CSSType.Properties);
+const RIGHT_HOLDET_WITH = '100px';
+
+const RightMenuHolder = styled('div', () => {
+  const style = {
+    ...leftRightBaseMenuStyle,
+    width: RIGHT_HOLDET_WITH,
+    paddingRight: globalStyles.mediumSpace,
+  } as CSSType.Properties;
+
+  if (!isWindows()) {
+    // @ts-ignore
+    style['-webkit-app-region'] = 'drag';
+  }
+
+  return style;
+});
 
 const MenuActionsHolder = styled('div', {
   display: 'flex',
-  width: '60%',
-  flexDirection: 'column',
-  padding: `0px ${globalStyles.mediumSpace}`,
-  alignItems: 'center',
-  justifyContent: 'center'
+  height: '100%',
+  width: `calc((100% - ${LEFT_HOLDER_WITH}) - ${RIGHT_HOLDET_WITH})`,
 } as CSSType.Properties);
 
 const SearchAreaHolder = styled('div', (props: HolderProps) => ({
@@ -180,13 +200,18 @@ class TitleBar extends React.Component<Props, {}> {
 
   render() {
     return (
-      <Holder onDoubleClick={toggleAvailableSpace} $quickSearchIsOpen={this.props.quickSearchIsOpen}>
+      <Holder
+        onDoubleClick={toggleAvailableSpace}
+        $quickSearchIsOpen={this.props.quickSearchIsOpen}
+      >
         <ActionsHolder $quickSearchIsOpen={this.props.quickSearchIsOpen}>
           <LeftMenuHolder>
             {!isWindows() && <MacMenu />}
           </LeftMenuHolder>
           <MenuActionsHolder>
+            <DragArea />
             {!!this.props.menuList.length && <PerformancesMenu menuList={this.props.menuList}/>}
+            <DragArea />
           </MenuActionsHolder>
           <RightMenuHolder>
             {isWindows() && <WindowsMenu />}
