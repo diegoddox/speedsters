@@ -5,9 +5,10 @@ import {
   ipcMain,
 } from 'electron';
 import * as path from 'path';
-import * as isDev from 'electron-is-dev';
 import * as WebSocket from 'ws';
 import * as windowStateKeeper from 'electron-window-state';
+
+const isDev = !app.isPackaged;
 
 if (isDev) {
   require('electron-reload')(__dirname);

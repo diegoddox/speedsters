@@ -51,15 +51,16 @@
     "win": {
       "target": "nsis"
     },
-    "files": ["dist/**/*"]
+    "files": [
+      "dist/**/*"
+    ]
   },
   "dependencies": {
-    "electron-is-dev": "^0.3.0",
     "electron-window-state": "^5.0.1",
     "ws": "^6.0.0"
   },
   "devDependencies": {
-    "electron": "2.0.8",
+    "electron": "3.0.8",
     "electron-builder": "^20.28.3"
   }
 }
