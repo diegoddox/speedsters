@@ -67,7 +67,7 @@ export class PerformanceList extends React.Component<Props, {}> {
         const issues = resp.totalIssues - this.lastTotalIssues;
         this.lastTotalIssues = resp.totalIssues;
 
-        if (resp && resp.totalIssues && issues) {
+        if (resp && resp.totalIssues && resp.totalIssues > this.lastTotalIssues) {
           ipcRenderer.send('main-window-is-blur');
 
           ipcRenderer.on('main-window-is-blur:reply', (_: any, isBlur: boolean) => {
