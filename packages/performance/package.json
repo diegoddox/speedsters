@@ -16,7 +16,8 @@
     "build": "yarn run clean && tsc -p tsconfig.build.json",
     "prepare": "yarn run build",
     "clean": "rimraf esnext types cjs",
-    "test": "jest"
+    "test": "jest",
+    "prepublish": "yarn run build"
   },
   "author": "Diego Oliveira <diegoddox@gmail.com>",
   "dependencies": {
