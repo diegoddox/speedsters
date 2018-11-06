@@ -35,8 +35,10 @@ const BASE_BUTTON_STYLES = {
 } as CSSType.Properties;
 
 const MenuHolder = styled('div', {
-  flex: 1,
   display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'center',
 } as CSSType.Properties);
 
 const PerformanceMenuHolder = styled('div', {

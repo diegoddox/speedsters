@@ -65,13 +65,13 @@ export class PerformanceList extends React.Component<Props, {}> {
     this.checkPerformanceTimeout = setTimeout(() => {
       checkPerformance(performances).then(resp => {
         if (resp && resp.totalIssues && this.lastTotalIssues !== resp.totalIssues) {
-          this.lastTotalIssues = resp.totalIssues;
-
           ipcRenderer.send('main-window-is-blur');
 
           ipcRenderer.on('main-window-is-blur:reply', (env: any, isBlur: boolean) => {
             if (isBlur) {
-              const title = `You have ${resp.totalIssues} ${resp.totalIssues > 1 ? 'performances' : 'performance'} that didn't pass`;
+              const issues = resp.totalIssues - this.lastTotalIssues;
+              const title = `You have ${issues} ${issues > 1 ? 'performances' : 'performance'} that didn't pass`;
+              this.lastTotalIssues = resp.totalIssues;
               const issueNotification = new Notification(title, {
                 body: 'Some of your performance didn\'t pass, you may wanna take a look at.'
               });

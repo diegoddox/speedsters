@@ -4,7 +4,7 @@ import { Provider as StyletronProvider, styled } from "styletron-react";
 import { Client as Styletron } from "styletron-engine-atomic";
 import PerformanceList from '../PerformanceList';
 import TitleBar from '../TitleBar';
-import Footer from 'Common/Footer';
+import Footer from '../Footer';
 import configureStore from './configure-store';
 import { connectSocketAction } from '../Socket/reducer';
 import styles from 'Common/Styles';
