@@ -28,9 +28,6 @@ module.exports = {
         test: /\.js$/,
         loader: 'source-map-loader',
       }, {
-        test: /\.css$/,
-        use: [ 'style-loader', 'css-loader' ]
-      }, {
         test: /\.svg$/,
         loader: 'svg-sprite-loader',
       }
