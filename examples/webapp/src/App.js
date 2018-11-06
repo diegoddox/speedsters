@@ -8,7 +8,7 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    sreact.component(this);
+    sreact.classComponent(this);
   }
 
   componentDidMount() {

@@ -8,7 +8,7 @@ import Title from '../BlogList/Title';
 class BlogView extends React.Component {
   constructor(props) {
     super(props);
-    sreact.component(this);
+    sreact.classComponent(this);
   }
 
   componentDidMount() {

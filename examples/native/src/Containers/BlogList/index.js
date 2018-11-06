@@ -17,7 +17,7 @@ class BlogList extends React.Component {
 
     this.handleAnotherBinding = this.handleAnotherBinding.bind(this);
     
-    sreact.component(this, {
+    sreact.classComponent(this, {
       excludes: {
         handleAnotherBinding: true,
       },
