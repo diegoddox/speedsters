@@ -11,6 +11,7 @@ import * as windowStateKeeper from 'electron-window-state';
 const isDev = !app.isPackaged;
 
 if (isDev) {
+  // TODO: this is not working propely.
   require('electron-reload')(__dirname);
 }
 
@@ -121,13 +122,22 @@ ipcMain.on('focus-main-window', () => {
   }
 });
 
-ipcMain.on('fill-available-space', () => {
-  if (mainWindow.isMaximized()) {
-    mainWindow.unmaximize();
-  } else {
+const toggleAvailableSpace = () => {
+  /**
+   * .isMaximized() is not working on windows.
+   * https://github.com/electron/electron/issues/9092
+   */
+  const { width } = screen.getPrimaryDisplay().workAreaSize;
+  const [ mainWindowWidth ] = mainWindow.getSize();
+
+  if (mainWindowWidth !== width) {
     mainWindow.maximize();
+  } else {
+    mainWindow.unmaximize();
   }
-});
+};
+
+ipcMain.on('toggle-available-space', toggleAvailableSpace);
 
 app.on('activate', () => {
   if (mainWindow === null) {
