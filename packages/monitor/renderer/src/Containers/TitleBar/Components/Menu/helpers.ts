@@ -8,6 +8,6 @@ export function minimize() {
   ipcRenderer.send('minimize');
 }
 
-export function fillAvailableSpace() {
-  ipcRenderer.send('fill-available-space');
+export function toggleAvailableSpace() {
+  ipcRenderer.send('toggle-available-space');
 }

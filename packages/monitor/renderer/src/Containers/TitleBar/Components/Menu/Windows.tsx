@@ -57,7 +57,7 @@ export default class WindowsMenu extends React.PureComponent {
 
   handleFillAvailableSpace(e: any) {
     e.preventDefault();
-    menuHelpers.fillAvailableSpace();
+    menuHelpers.toggleAvailableSpace();
   }
 
   render() {

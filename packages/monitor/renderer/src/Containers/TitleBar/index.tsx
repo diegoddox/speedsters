@@ -9,7 +9,7 @@ import { isWindows } from 'Utils';
 import MacMenu from './Components/Menu/Mac';
 import WindowsMenu from './Components/Menu/Windows';
 import PerformancesMenu from './Components/PerformancesMenu';
-import { fillAvailableSpace } from './Components/Menu/helpers';
+import { toggleAvailableSpace } from './Components/Menu/helpers';
 import State from 'Common/State';
 import {
   closeQuickSearchAction,
@@ -27,7 +27,14 @@ const Holder = styled('div', (props: HolderProps) => ({
   width: '100%',
   height: props.$quickSearchIsOpen ? TITLE_BAR_EXPANDED_HEIGHT : TITLE_BAR_HEIGHT,
   backgroundColor: globalStyles.color.secondary,
-  '-webkit-app-region': 'drag',
+  /**
+   * On windows -webkit-app-region is causing
+   * an issue where the user are not able to
+   * click on any button.
+   * 
+   * TODO: find work around.
+   */
+  // '-webkit-app-region': 'drag',
   position: 'relative',
   color: globalStyles.color.softWhite,
   transition: 'all 400ms',
@@ -173,7 +180,7 @@ class TitleBar extends React.Component<Props, {}> {
 
   render() {
     return (
-      <Holder onDoubleClick={fillAvailableSpace} $quickSearchIsOpen={this.props.quickSearchIsOpen}>
+      <Holder onDoubleClick={toggleAvailableSpace} $quickSearchIsOpen={this.props.quickSearchIsOpen}>
         <ActionsHolder $quickSearchIsOpen={this.props.quickSearchIsOpen}>
           <LeftMenuHolder>
             {!isWindows() && <MacMenu />}
