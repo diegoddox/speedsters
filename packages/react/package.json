@@ -1,6 +1,6 @@
 {
   "name": "@speedsters/react",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A simple way of testing your react application performance",
   "main": "./cjs/index.js",
   "types": "./types/development/index.d.ts",

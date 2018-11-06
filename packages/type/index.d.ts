@@ -77,6 +77,6 @@ export declare interface CoreSocket {
 
 export declare interface IReact {
   connect(options: ConnectionOptions): IReact;
-  component(options: ReactComponentOptions): void;
+  classComponent(options: ReactComponentOptions): void;
   data: any;
 }

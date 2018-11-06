@@ -46,7 +46,7 @@ export class IReact implements JsnpReactType {
     return this;
   }
 
-  public component(_this: any, options?: ReactComponentOptions): any {
+  public classComponent(_this: any, options?: ReactComponentOptions): any {
     const methods = [];
 
     const proto = Object.getPrototypeOf(_this);
