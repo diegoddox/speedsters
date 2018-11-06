@@ -8,7 +8,6 @@ import Footer from '../Footer';
 import configureStore from './configure-store';
 import { connectSocketAction } from '../Socket/reducer';
 import styles from 'Common/Styles';
-import './base.css';
 import { get, set } from '../../Storage';
 
 const  INITIAL_STATE = get('redux-state');
