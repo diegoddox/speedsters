@@ -74,11 +74,11 @@ export default class App extends React.Component<Props, State> {
       milliseconds: 16;
     };
 
-    sreact.component(this, options);
+    sreact.classComponent(this, options);
 
     /*
      * Because this method is been bind on the constructor 
-     * it will be measure by the sreact.component.
+     * it will be measure by the sreact.classComponent.
      * 
      * NOTE: Arrow function will not be measured.
      */
