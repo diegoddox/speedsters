@@ -64,7 +64,7 @@ export class PerformanceList extends React.Component<Props, {}> {
 
     this.checkPerformanceTimeout = setTimeout(() => {
       checkPerformance(performances).then(resp => {
-        if (resp && resp.totalIssues && this.lastTotalIssues !== resp.totalIssues) {
+        if (resp && resp.totalIssues && resp.totalIssues > this.lastTotalIssues) {
           ipcRenderer.send('main-window-is-blur');
 
           ipcRenderer.on('main-window-is-blur:reply', (env: any, isBlur: boolean) => {

@@ -58,29 +58,20 @@ export default class App extends React.Component<Props, State> {
   constructor(props) {
     super(props);
 
-    /*
-     * Add this line to the constructor
-     * and you're ready to GO!
-     */
     const options = {
       excludes: {
         // Exclude this method.
         handlePushViewButton: true,
       },
-      /*
-       * 16 frame per second is the best performance you
-       * can get for an react-native app
-       */
+      // specify the performance that you wanna this component to have
       milliseconds: 16;
     };
 
     sreact.classComponent(this, options);
 
     /*
-     * Because this method is been bind on the constructor 
+     * Because those methods are been bind in the constructor 
      * it will be measure by the sreact.classComponent.
-     * 
-     * NOTE: Arrow function will not be measured.
      */
     this.handleChangeViewButton = this.handleChangeViewButton.bind(this);
     this.handlePushViewButton = this.handlePushViewButton.bind(this);
@@ -94,7 +85,7 @@ export default class App extends React.Component<Props, State> {
     ...
   }
 
-  // Will not be measured
+  // Arrow function will not be measured.
   handleEditButton = () => {
     ...
   };
