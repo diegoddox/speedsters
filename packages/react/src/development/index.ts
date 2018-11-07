@@ -1,6 +1,6 @@
 import {
   ConnectionOptions,
-  IReact as JsnpReactType,
+  IReact as SReactType,
   ReactComponentData,
   RenderCountHistory,
   ReactComponentOptions,
@@ -25,7 +25,7 @@ const RENDER = 'render';
 
 let socket: CoreSocket;
 
-export class IReact implements JsnpReactType {
+export class SReact implements SReactType {
   private _data: ReactComponentData | any = {};
   private hasInitiateConnection: boolean = false;
 
@@ -191,5 +191,5 @@ export class IReact implements JsnpReactType {
   }
 }
 
-const jsnpr = new IReact();
-export default jsnpr;
+const sreact = new SReact();
+export default sreact;
