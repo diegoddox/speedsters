@@ -3,10 +3,12 @@ import {
   BrowserWindow,
   screen,
   ipcMain,
+  Menu,
 } from 'electron';
 import * as path from 'path';
 import * as WebSocket from 'ws';
 import * as windowStateKeeper from 'electron-window-state';
+import openAboutWindow from 'electron-about-window';
 
 const isDev = !app.isPackaged;
 
@@ -55,6 +57,7 @@ function createWindow () {
   });
 
   const window = new BrowserWindow({
+    title: 'Speedsters',
     width: mainWindowState.width,
     height: mainWindowState.height,
     x: mainWindowState.x,
@@ -70,6 +73,28 @@ function createWindow () {
       partition: 'persist:main'
     },
   });
+
+  const speedstersMenu = Menu.buildFromTemplate([
+    {
+      label: 'Speedsters',
+      submenu: [
+        {
+          label: 'About Speedsters',
+          click() {
+            openAboutWindow({ icon_path: './icons/96x96.png' })
+          }
+        }, {
+          label: 'Quick',
+          accelerator: process.platform === 'darwin' ? 'Cmd+Q' : '',
+          click() {
+            app.quit();
+          }
+        }
+      ]
+    }
+  ]);
+
+  Menu.setApplicationMenu(speedstersMenu);
 
   mainWindowState.manage(window);
 
