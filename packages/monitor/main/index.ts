@@ -81,7 +81,23 @@ function createWindow () {
         {
           label: 'About Speedsters',
           click() {
-            openAboutWindow({ icon_path: './icons/96x96.png' })
+            const ABOUT_SIZE = 300;
+
+            openAboutWindow({
+              icon_path: path.resolve(__dirname,  './icons/icon.png'),
+              homepage: 'https://github.com/diegoddox/speedsters',
+              bug_report_url: 'https://github.com/diegoddox/speedsters/issues',
+              win_options: {
+                width: ABOUT_SIZE,
+                height: ABOUT_SIZE,
+                maxWidth: ABOUT_SIZE,
+                minWidth: ABOUT_SIZE,
+                minHeight: ABOUT_SIZE,
+                maxHeight: ABOUT_SIZE,
+                minimizable: false,
+                maximizable: false,
+              },
+            })
           }
         }, {
           label: 'Quick',
