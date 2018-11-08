@@ -1,6 +1,6 @@
 {
   "name": "@speedsters/core",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "./cjs/index.js",
   "types": "./types/index.d.ts",
   "repository": {

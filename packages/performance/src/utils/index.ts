@@ -50,7 +50,7 @@ export const logData = (data: any[] | null, tableFilter?: string[]) => {
 };
 
 export const performanceNow = () => {
-  if (typeof window != undefined && 'performance' in window === true) {
+  if (typeof window != 'undefined' && 'performance' in window === true) {
     return performance.now();
   }
   return Date.now();

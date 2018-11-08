@@ -32,7 +32,7 @@ export class Socket implements CoreSocket{
      * If is not server rendering 
      * we don't need to do anything.
      */
-    if (typeof window === undefined) {
+    if (typeof window === 'undefined') {
       return this;
     }
 

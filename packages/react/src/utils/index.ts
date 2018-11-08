@@ -1,6 +1,6 @@
 export const performanceNow = () => {
   if (
-    typeof window != undefined &&
+    typeof window != 'undefined' &&
     'performance' in window === true &&
     navigator.product != 'ReactNative'
   ) {

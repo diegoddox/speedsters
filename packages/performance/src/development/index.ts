@@ -143,7 +143,7 @@ export class SPerformance implements IPerformance {
   }
 
   public createGlobalLog() {
-    if (typeof window !== undefined) {
+    if (typeof window !== 'undefined') {
       (window as any).__lognp = (tableFilter?: string[]) => this.log(tableFilter);
     }
   }
