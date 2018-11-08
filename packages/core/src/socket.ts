@@ -28,6 +28,14 @@ export class Socket implements CoreSocket{
   }
 
   public connect(): Socket {
+    /**
+     * If is not server rendering 
+     * we don't need to do anything.
+     */
+    if (typeof window === undefined) {
+      return this;
+    }
+
     const {
       host,
       port,
