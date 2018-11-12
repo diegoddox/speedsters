@@ -97,7 +97,7 @@ function createWindow () {
                 minimizable: false,
                 maximizable: false,
               },
-            })
+            });
           }
         }, {
           label: 'Quick',
