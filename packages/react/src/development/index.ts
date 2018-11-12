@@ -21,8 +21,6 @@ const DEFAULT_COMPONENT_OPTIONS: ReactComponentOptions = {
   verbose: false,
 };
 
-const RENDER = 'render';
-
 let socket: CoreSocket;
 
 export class SReact implements SReactType {
@@ -65,7 +63,7 @@ export class SReact implements SReactType {
         [RENDER_COUNT]: {
           value: 0,
           timing: 0,
-          timeline: []
+          timeline: [],
         },
       },
     };
@@ -93,7 +91,10 @@ export class SReact implements SReactType {
 
       const renderCountItem: RenderCountHistory = {
         timing: time - renderStartTime,
-      }
+        props: _this.props,
+        state: _this.state,
+      };
+
       if (milliseconds) {
         renderCountItem.milliseconds = milliseconds;
       }
@@ -111,7 +112,7 @@ export class SReact implements SReactType {
           // Start time
           const time = performanceNow();
 
-          const isRenderMethod = name === RENDER;
+          const isRenderMethod = name === 'render';
 
           /**
            * If is the first render we update 

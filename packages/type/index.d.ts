@@ -8,6 +8,8 @@ export type BasePerformanceData = {
 export type RenderCountHistory = {
   timing: number;
   milliseconds?: number | null;
+  props: any;
+  state: any;
 }
 
 export type RenderCount = {
