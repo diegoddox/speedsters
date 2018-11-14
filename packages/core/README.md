@@ -1,1 +1,1 @@
-# speedsters [https://github.com/diegoddox/speedsters](https://github.com/diegoddox/speedsters) for details.
+#### [https://github.com/diegoddox/speedsters](https://github.com/diegoddox/speedsters) for details on how to use.

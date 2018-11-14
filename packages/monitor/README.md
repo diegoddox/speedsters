@@ -1,1 +1,1 @@
-# INIT
+#### [https://github.com/diegoddox/speedsters](https://github.com/diegoddox/speedsters) for details on how to use.
