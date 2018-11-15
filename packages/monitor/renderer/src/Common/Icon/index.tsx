@@ -2,18 +2,14 @@ import * as React from 'react'
 import '../../Assets/icons.svg';
 
 type IconTypes =
-  'atom' |
-  'stats-bars' |
   'flash' |
-  'lightning-1' |
   'android-close' |
-  'magnifying-glass' |
   'android-remove' |
-  'caret-up' |
-  'albums-outline' |
   'android-add' |
+  'fontawesome-webfont' |
   'square-o' |
-  'search' |
+  'trash-o' |
+  'react-icon' |
   'magnifying-glass';
 
 type Props = {
