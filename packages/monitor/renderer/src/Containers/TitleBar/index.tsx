@@ -131,6 +131,7 @@ const CloseSearchButton = styled('button', {
   background: 'none',
   border: 'none',
   position: 'relative',
+  cursor: 'pointer',
   ':focus': {
     outline: 0,
   },
