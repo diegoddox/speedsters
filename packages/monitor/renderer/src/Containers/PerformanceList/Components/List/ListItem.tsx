@@ -1,7 +1,12 @@
 import * as React from 'react';
 import * as CSSType from 'csstype';
 import { styled } from 'styletron-react';
-import { hasPerformanceIssue, millisecondsToSeconds } from 'Utils';
+import {
+  hasPerformanceIssue,
+  millisecondsToSeconds,
+  getValueFromPixel,
+} from 'Utils';
+import Icon from 'Common/Icon';
 import { BasePerformance } from '../../';
 import globalStyles, { ellipsis, preventUserSelection } from 'Common/Styles';
 
@@ -38,7 +43,7 @@ const ListName = styled('div', {
   color: globalStyles.color.lightBlue,
 } as CSSType.Properties);
 
-const RENDER_COUNT_HOLDER_HEIGHT = '140px';
+const RENDER_COUNT_HOLDER_HEIGHT = '160px';
 
 const PerformanceHolder = styled('div', {
   display: 'flex',
@@ -58,7 +63,7 @@ const CountCircleHolder = styled('div', {
   borderRight: '1px solid #344256',
 } as CSSType.Properties);
 
-const renderCountSize = '120px';
+const renderCountSize = '140px';
 
 const CountCircle = styled('div', {
   float: 'right',
@@ -70,7 +75,36 @@ const CountCircle = styled('div', {
   alignItems: 'center',
   justifyContent: 'center',
   flexDirection: 'column',
+  position: 'relative',
   marginRight: '20px',
+} as CSSType.Properties);
+
+const clearRenderHistoryButtonSize = '30px';
+
+const ClearRenderHistoryButton = styled('button', {
+  width: clearRenderHistoryButtonSize,
+  height: clearRenderHistoryButtonSize,
+  position: 'absolute',
+  top: '50%',
+  right: `-${(getValueFromPixel(clearRenderHistoryButtonSize) / 2)}px`,
+  marginTop: `-${(getValueFromPixel(clearRenderHistoryButtonSize) / 2)}px`,
+  backgroundColor: globalStyles.color.primary,
+  borderRadius: '50%',
+  border: `1px solid ${globalStyles.color.lightBlue}`,
+  cursor: 'pointer',
+  fontSize: '16px',
+  color: globalStyles.color.softWhite,
+  transition: 'all 250ms',
+  ':hover': {
+    backgroundColor: globalStyles.color.secondary,
+    transform: 'rotate(15deg)',
+  },
+  ':active': {
+    backgroundColor: 'black',
+  },
+  ':focus': {
+    outline: 0,
+  },
 } as CSSType.Properties);
 
 const CountList = styled('div', () => ({
@@ -129,7 +163,11 @@ const formatPerformanceValue = (value: number, milliseconds: number) => {
   return `${millisecondsToSeconds(value)}/${millisecondsToSeconds(milliseconds)}`;
 }
 
-export default (props: BasePerformance) => {
+type ListItemProps = BasePerformance & {
+  onClearClick: () => void;
+}
+
+const ListItem = (props: ListItemProps) => {
   if (props.name === 'renderCount') {
     return (
       <ListHolder>
@@ -139,6 +177,9 @@ export default (props: BasePerformance) => {
               <CountCircleH1>{props.value}</CountCircleH1>
               <small>render</small>
               <h6>{millisecondsToSeconds(props.timing)}</h6>
+              <ClearRenderHistoryButton onClick={props.onClearClick}>
+                <Icon name="trash-o" addTopSpace/>
+              </ClearRenderHistoryButton>
             </CountCircle>
           </CountCircleHolder>
           <CountList>
@@ -173,3 +214,5 @@ export default (props: BasePerformance) => {
     </ListHolder>
   );
 }
+
+export default ListItem;

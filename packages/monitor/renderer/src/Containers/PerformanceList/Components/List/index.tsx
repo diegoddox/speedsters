@@ -21,6 +21,7 @@ const Holder = styled('div', {
 type ApplicationTitleType = {
   $index: number;
 }
+
 const ApplicationTitle = styled('div', (props: ApplicationTitleType) => ({
   display: 'flex',
   width: '100vw',
@@ -121,36 +122,49 @@ class List extends React.Component<Props, {}> {
     }
   }
 
-  handlePerformancesRefs = (index: number) => (ref: HTMLDivElement) =>{
-    this.performancesRefs[index] = ref;
-  };
+  handlePerformancesRefs(index: number) {
+    return (ref: HTMLDivElement) =>{
+      this.performancesRefs[index] = ref;
+    };
+  }
 
-  handlePerformanceTitleRefs = (index: number) => (ref: HTMLDivElement) => {
-    this.performanceTitleRefs[index] = ref;
-  };
+  handlePerformanceTitleRefs(index: number) {
+    return (ref: HTMLDivElement) => {
+      this.performanceTitleRefs[index] = ref;
+    };
+  }
 
   render() {
     return (
       <Holder $ref={this.holderRef}>
-        {this.props.performances.map((performance, i) => (
-          <div
-            key={performance.applicationName}
-            ref={this.handlePerformancesRefs(i)}
-          >
-            <ApplicationTitle $index={i} $ref={this.handlePerformanceTitleRefs(i)}>
-              {performance.applicationName}
-            </ApplicationTitle>
-            <ul>
-              {performance.data.map((x: any, i: number) => {
-                if (x.data) {
-                  return <ListWithTitle key={i} {...x} />;
-                } else {
-                  return <ListItem key={i} {...x} />;
-                }
-              })}
-            </ul>
-          </div>
-        ))}
+        {this.props.performances.map((performance, i) => {
+          const { applicationName } = performance;
+          return (
+            <div
+              key={applicationName}
+              ref={this.handlePerformancesRefs(i)}
+            >
+              <ApplicationTitle $index={i} $ref={this.handlePerformanceTitleRefs(i)}>
+                {applicationName}
+              </ApplicationTitle>
+              <ul>
+                {performance.data.map((x: any, i: number) => {
+                  if (x.data && Array.isArray(x.data)) {
+                    return (
+                      <ListWithTitle
+                        key={i}
+                        {...x}
+                        applicationName={applicationName}
+                      />
+                    );
+                  } else {
+                    return <ListItem key={i} {...x} />;
+                  }
+                })}
+              </ul>
+            </div>
+          );
+        })}
       </Holder>
     )
   }

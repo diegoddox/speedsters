@@ -106,6 +106,7 @@ type MenuItemType = {
 } 
 
 const PerformanceMenuItem = styled('li', (props: MenuItemType) => ({
+  ...preventUserSelection,
   padding: `10px ${globalStyles.mediumSpace}`,
   textAlign: 'center',
   color: props.$active ? globalStyles.color.issue : globalStyles.color.softWhite,
@@ -114,11 +115,11 @@ const PerformanceMenuItem = styled('li', (props: MenuItemType) => ({
   ':hover': {
     opacity: 1,
   },
-  ...preventUserSelection,
 } as CSSType.Properties & any));
 
 const SearchButton = styled('div', {
   ...BASE_BUTTON_STYLES,
+  cursor: 'pointer',
 });
 
 type OwnProps = {
