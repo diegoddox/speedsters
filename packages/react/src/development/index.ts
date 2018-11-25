@@ -29,6 +29,7 @@ export class SReact implements SReactType {
 
   constructor() {
     this.connect = this.connect.bind(this);
+    this.handleSocketMessages = this.handleSocketMessages.bind(this);
   }
   
   get data() {
@@ -39,9 +40,54 @@ export class SReact implements SReactType {
     // Flag the initialization
     this.hasInitiateConnection = true;
 
-    socket = createSocket(options);
+    const socketOptions = {
+      ...options,
+    };
+
+    socketOptions.onMessage = (e) => {
+      if (options.onMessage) {
+        options.onMessage(e);
+      }
+
+      try {
+        const msg = JSON.parse(e.data);
+        if (msg && msg.type) {
+          this.handleSocketMessages(msg);
+        }
+      } catch (e) {
+        console.log(`Error while parsing React:socket.onMessage ${e}`);
+      }
+    }
+
+    socket = createSocket(socketOptions);
     socket.connect();
     return this;
+  }
+
+  private handleSocketMessages(data: any) {
+    switch(data.type) {
+      case 'CLEAR_REACT_RENDER_HISTORY':
+        if (
+          data.payload &&
+          data.payload.componentName &&
+          this._data[data.payload.componentName]
+        ) {
+          this._data = {
+            ...this._data,
+            [data.payload.componentName]: {
+              ...this._data[data.payload.componentName],
+              [RENDER_COUNT]: {
+                value: 0,
+                timing: 0,
+                timeline: [],
+              },
+            }
+          };
+        }
+        break;
+      default:
+        break;
+    }
   }
 
   public classComponent(_this: any, options?: ReactComponentOptions): any {
@@ -58,13 +104,11 @@ export class SReact implements SReactType {
 
     const { milliseconds, excludes, verbose }: ReactComponentOptions = { ...DEFAULT_COMPONENT_OPTIONS, ...options };
 
-    const performanceData: ReactComponentData = {
-      [COMPONENT_NAME]: {
-        [RENDER_COUNT]: {
-          value: 0,
-          timing: 0,
-          timeline: [],
-        },
+    this._data[COMPONENT_NAME] = {
+      [RENDER_COUNT]: {
+        value: 0,
+        timing: 0,
+        timeline: [],
       },
     };
 
@@ -77,17 +121,17 @@ export class SReact implements SReactType {
     let firstRenderingStartTime: number | any = null;
     let renderStartTime: number | any = null;
     
-    function updateRenderCount() {
+    const updateRenderCount = () => {
       const time = performanceNow();
 
       // Update the amount of times the component has rendering
-      performanceData[COMPONENT_NAME][RENDER_COUNT].value += 1;
+      this._data[COMPONENT_NAME][RENDER_COUNT].value += 1;
 
       /**
        * Calculate the timing since the component
        * was mounted.
        */
-      performanceData[COMPONENT_NAME][RENDER_COUNT].timing = time - firstRenderingStartTime;
+      this._data[COMPONENT_NAME][RENDER_COUNT].timing = time - firstRenderingStartTime;
 
       const renderCountItem: RenderCountHistory = {
         timing: time - renderStartTime,
@@ -99,8 +143,8 @@ export class SReact implements SReactType {
         renderCountItem.milliseconds = milliseconds;
       }
       // Save to the timeline.
-      performanceData[COMPONENT_NAME][RENDER_COUNT].timeline.push(renderCountItem);
-    }
+      this._data[COMPONENT_NAME][RENDER_COUNT].timeline.push(renderCountItem);
+    };
 
     for (let name of Object.getOwnPropertyNames(proto)) {
       const func = _this[name];
@@ -159,18 +203,13 @@ export class SReact implements SReactType {
             name === COMPONENT_DID_UPDATE &&
             hasDidUpdate
           ) {
-            performanceData[COMPONENT_NAME][name] = {
+            this._data[COMPONENT_NAME][name] = {
               value: timing
             };
           }
 
-          this._data = {
-            ...this._data,
-            ...performanceData,
-          };
-
           if (verbose) {
-            console.log(`@speedsters/react: ${COMPONENT_NAME} ${performanceData}`);
+            console.log(`@speedsters/react: ${COMPONENT_NAME} ${this._data[COMPONENT_NAME]}`);
           }
 
           /**
@@ -178,7 +217,9 @@ export class SReact implements SReactType {
            * run the @connect method.
            */
           if (this.hasInitiateConnection) {
-            socket.sendPerformance(performanceData);
+            socket.sendPerformance({
+              [COMPONENT_NAME]: this._data[COMPONENT_NAME],
+            });
           }
 
           return res;
