@@ -19,6 +19,11 @@ if (isDev) {
 
 let mainWindow: BrowserWindow;
 
+type SocketConnections = {
+  [x: string]: WebSocket;
+};
+
+const socketConnections: SocketConnections = {};
 const wss = new WebSocket.Server({ port: 1338 }, () => console.log('Ws server started'));
 
 (wss as any).broadcast = (data: any, sender: WebSocket) => {
@@ -32,7 +37,27 @@ const wss = new WebSocket.Server({ port: 1338 }, () => console.log('Ws server st
 wss.on('connection', (ws) => {
   (ws as any).isAlive = true;
   ws.on('pong', () => (ws as any).isAlive = true);
-  ws.on('message', (data: any) => (wss as any).broadcast(data, ws));
+  ws.on('message', (data: any) => {
+    try {
+      const msg = JSON.parse(data);
+
+      if (msg && msg.type && msg.type === 'client.init') {
+        socketConnections[msg.payload.name] = ws;
+      } else if (
+        msg &&
+        msg.type &&
+        msg.type === 'SOCKET_CLIENT_MESSAGE' &&
+        msg.payload &&
+        msg.payload.name &&
+        socketConnections[msg.payload.name]
+      ) {
+        const socketPayload = JSON.stringify(msg.payload.socketPayload);
+        socketConnections[msg.payload.name].send(socketPayload);
+      } else {
+        (wss as any).broadcast(data, ws);
+      }
+    } catch {}
+  });
 });
 
 wss.on('error', () => clearInterval(socketPingPongInterval));
@@ -110,7 +135,14 @@ function createWindow () {
     }
   ]);
 
-  Menu.setApplicationMenu(speedstersMenu);
+  /**
+   * In order to still get the development menu
+   * we're only going to add a menu if is not
+   * development mode.
+   */
+  if (!isDev) {
+    Menu.setApplicationMenu(speedstersMenu);
+  }
 
   mainWindowState.manage(window);
 
