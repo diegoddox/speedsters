@@ -37,6 +37,7 @@ export class Socket implements CoreSocket{
     }
 
     const {
+      name,
       host,
       port,
       secure,
@@ -53,6 +54,14 @@ export class Socket implements CoreSocket{
       this.isReady = true;
 
       onConnect && onConnect(e);
+
+      // Identify the client when we make the connection.
+      socket.send(JSON.stringify({
+        type: 'client.init',
+        payload: {
+          name
+        }
+      }));
 
       // Fire what we have in the queue
       while (this.sendQueue.length > 0) {
