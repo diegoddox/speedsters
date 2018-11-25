@@ -1,5 +1,10 @@
 import createReducer from 'Common/create-reducer';
-import { SOCKET_PERFORMANCE_DATA, SocketData } from '../Socket/reducer';
+import {
+  SOCKET_PERFORMANCE_DATA,
+  sendSocketMessage,
+  SocketData
+} from '../Socket/reducer';
+import { Dispatch } from 'redux';
 
 export const ALL_PERFORMANCES = 'ALL';
 const CLEAR_REACT_RENDER_HISTORY = 'CLEAR_REACT_RENDER_HISTORY';
@@ -89,3 +94,13 @@ export const clearReactRenderHistory = (applicationName: string, componentName: 
     componentName,
   } as ClearReactRenderHistory
 });
+
+export const clearReactRenderHistorySocketMessage = (applicationName: string, componentName: string) => sendSocketMessage({
+  name: applicationName,
+  socketPayload: {
+    type: CLEAR_REACT_RENDER_HISTORY,
+    payload: {
+      componentName,
+    },
+  },
+})

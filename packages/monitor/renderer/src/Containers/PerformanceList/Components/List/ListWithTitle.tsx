@@ -7,7 +7,7 @@ import ListItem, { LIST_VALUE_WIDTH } from './ListItem';
 import { BasePerformance } from '../../';
 import globalStyles, { ellipsis, preventUserSelection } from 'Common/Styles';
 import Icon from 'Common/Icon';
-import { clearReactRenderHistory } from '../../reducer';
+import { clearReactRenderHistory, clearReactRenderHistorySocketMessage } from '../../reducer';
 
 const ListWithTitleUl = styled('ul', {
   borderBottom: '15px solid #2a3648',
@@ -43,7 +43,14 @@ type ListWithTitleProps = BasePerformance & {
 }
 
 const ListWithTitle = ({ name, data, isReactComponent, dispatch, applicationName }: ListWithTitleProps ) => {
-  const handleReactHistoryOnClearClick  = () => dispatch(clearReactRenderHistory(applicationName, name));
+  const handleReactHistoryOnClearClick  = () => {
+    /**
+     * We could batch the dispatch but for now let's keep
+     * and if we start to have more of those we can add redux-batched-actions
+     */
+    dispatch(clearReactRenderHistory(applicationName, name));
+    dispatch(clearReactRenderHistorySocketMessage(applicationName, name));
+  };
   return (
     <ListWithTitleUl>
       <TitleHolder>
