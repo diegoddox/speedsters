@@ -7,6 +7,7 @@ import {
   SOCKET_DISCONNECT,
   SOCKET_CONNECTION_ERROR,
   SOCKET_CLIENT_MONITOR_CONNECTED,
+  SOCKET_CLIENT_MESSAGE,
 } from './reducer';
 
 const socketMiddleWare = (() => {
@@ -77,6 +78,11 @@ const socketMiddleWare = (() => {
           socket.close();
         }
         socket = null;
+        break;
+      case SOCKET_CLIENT_MESSAGE:
+        if (socket && socket.OPEN) {
+          socket.send(JSON.stringify(action));
+        }
         break;
       default:
         return next(action);
