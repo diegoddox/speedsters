@@ -17,8 +17,9 @@ import {
 
 import { createSocket, denormalize } from '@speedsters/core';
 
-const DEFAULT_OPTIONS: ConnectionOptions = {
-  name: 'Nice Performance',
+const DEFAULT_CONNECTION_OPTIONS: ConnectionOptions = {
+  name: '@speedsters/performance',
+  packageId: '@speedsters/performance',
 };
 
 let socket: CoreSocket;
@@ -40,7 +41,7 @@ export class SPerformance implements IPerformance {
   public connect(options: ConnectionOptions = {}) {
 
     this.options = {
-      ...DEFAULT_OPTIONS,
+      ...DEFAULT_CONNECTION_OPTIONS,
       ...options,
     };
 

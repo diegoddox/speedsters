@@ -41,6 +41,7 @@ export class Socket implements CoreSocket{
       host,
       port,
       secure,
+      packageId,
       onConnect,
       onMessage,
       onClose,
@@ -59,7 +60,8 @@ export class Socket implements CoreSocket{
       socket.send(JSON.stringify({
         type: 'client.init',
         payload: {
-          name
+          name,
+          packageId,
         }
       }));
 
@@ -105,6 +107,7 @@ export class Socket implements CoreSocket{
     // Use this to send data to the @speedsters/monitor.
     this.send({
       applicationName: this.options.name,
+      packageId: this.options.packageId,
       type: 'SOCKET:PERFORMANCE_DATA',
       data,
     });

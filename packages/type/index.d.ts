@@ -58,6 +58,7 @@ export type ConnectionOptions = {
   onError?: (e: any) => any;
   onClose?: (e: CloseEvent) => any;
   Platform?: any;
+  packageId?: string;
 }
 
 export declare interface IPerformance {

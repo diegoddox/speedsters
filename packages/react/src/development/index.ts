@@ -15,6 +15,11 @@ export const RENDER_COUNT = 'renderCount';
 const COMPONENT_DID_MOUNT = 'componentDidMount';
 const COMPONENT_DID_UPDATE = 'componentDidUpdate';
 
+const DEFAULT_CONNECTION_OPTIONS: ConnectionOptions = {
+  name: '@speedsters/react',
+  packageId: '@speedsters/react',
+};
+
 const DEFAULT_COMPONENT_OPTIONS: ReactComponentOptions = {
   excludes: {},
   milliseconds: null,
@@ -41,6 +46,7 @@ export class SReact implements SReactType {
     this.hasInitiateConnection = true;
 
     const socketOptions = {
+      ...DEFAULT_CONNECTION_OPTIONS,
       ...options,
     };
 
