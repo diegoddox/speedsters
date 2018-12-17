@@ -37,22 +37,23 @@ const wss = new WebSocket.Server({ port: 1338 }, () => console.log('Ws server st
 wss.on('connection', (ws) => {
   (ws as any).isAlive = true;
   ws.on('pong', () => (ws as any).isAlive = true);
+
+  const keySocketName = (packageId: string, name: string) => `${packageId}-${name}`;
+
   ws.on('message', (data: any) => {
     try {
-      const msg = JSON.parse(data);
+      const msg = JSON.parse(data) || {};
 
-      if (msg && msg.type && msg.type === 'client.init') {
-        socketConnections[msg.payload.name] = ws;
+      if (msg.type && msg.type === 'client.init') {
+        socketConnections[keySocketName(msg.payload.packageId, msg.payload.name)] = ws;
       } else if (
-        msg &&
         msg.type &&
         msg.type === 'SOCKET_CLIENT_MESSAGE' &&
         msg.payload &&
-        msg.payload.name &&
-        socketConnections[msg.payload.name]
+        socketConnections[keySocketName(msg.payload.packageId, msg.payload.name)]
       ) {
         const socketPayload = JSON.stringify(msg.payload.socketPayload);
-        socketConnections[msg.payload.name].send(socketPayload);
+        socketConnections[keySocketName(msg.payload.packageId, msg.payload.name)].send(socketPayload);
       } else {
         (wss as any).broadcast(data, ws);
       }
