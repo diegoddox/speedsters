@@ -16,7 +16,7 @@ const COMPONENT_DID_MOUNT = 'componentDidMount';
 const COMPONENT_DID_UPDATE = 'componentDidUpdate';
 
 const DEFAULT_CONNECTION_OPTIONS: ConnectionOptions = {
-  name: '@speedsters/react',
+  name: 'Speedsters React',
   packageId: '@speedsters/react',
 };
 
@@ -87,7 +87,7 @@ export class SReact implements SReactType {
                 timing: 0,
                 timeline: [],
               },
-            }
+            },
           };
         }
         break;

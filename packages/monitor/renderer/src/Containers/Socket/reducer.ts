@@ -59,6 +59,7 @@ export const connectSocketAction = {
 
 type SendSocketMessagePayload = {
   name: string;
+  packageId: string;
   socketPayload: {
     type: string;
     payload?: any;

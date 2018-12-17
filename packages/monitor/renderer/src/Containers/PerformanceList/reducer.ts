@@ -97,6 +97,7 @@ export const clearReactRenderHistory = (applicationName: string, componentName: 
 
 export const clearReactRenderHistorySocketMessage = (applicationName: string, componentName: string) => sendSocketMessage({
   name: applicationName,
+  packageId: '@speedsters/react',
   socketPayload: {
     type: CLEAR_REACT_RENDER_HISTORY,
     payload: {
