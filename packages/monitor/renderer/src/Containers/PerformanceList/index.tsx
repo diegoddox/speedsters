@@ -58,6 +58,10 @@ export class PerformanceList extends React.Component<Props, {}> {
   }
 
   checkPerformanceAndNotify(performances: any) {
+    if (!performances.length) {
+      return
+    };
+
     if (this.checkPerformanceTimeout) {
       clearTimeout(this.checkPerformanceTimeout);
     }
