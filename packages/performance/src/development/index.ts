@@ -18,7 +18,7 @@ import {
 import { createSocket, denormalize } from '@speedsters/core';
 
 const DEFAULT_CONNECTION_OPTIONS: ConnectionOptions = {
-  name: '@speedsters/performance',
+  name: 'Speedsters Performance',
   packageId: '@speedsters/performance',
 };
 
