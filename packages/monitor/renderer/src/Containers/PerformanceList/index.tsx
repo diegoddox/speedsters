@@ -1,16 +1,13 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { styled } from 'styletron-react';
+import { ipcRenderer } from 'electron';
 import Container from 'Common/Container';
 import List from './Components/List';
 import GlobalState from 'Common/State';
 import { denormalize } from 'Utils';
-import CSSType from 'csstype';
-import globalStyle, { preventUserSelection } from 'Common/Styles';
-import Logo from 'Common/Logo';
 import filterPerformances from './filter-performances';
 import checkPerformance from './check-performance';
-import { ipcRenderer } from 'electron';
+import NoConnection from './NoConnection';
 
 export type BasePerformance = {
   name: string;
@@ -28,20 +25,6 @@ type Props = {
   applicationsConnected: number;
   quickSearchIsOpen: boolean;
 }
-
-const InfoHolder = styled('div', {
-  flex: 1,
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  ...preventUserSelection,
-} as CSSType.Properties);
-
-const Info = styled('div', {
-  width: '300px',
-  textAlign: 'center',
-  color: globalStyle.color.softWhite,
-} as CSSType.Properties);
 
 export class PerformanceList extends React.Component<Props, {}> {
   checkPerformanceTimeout: any = null;
@@ -93,14 +76,7 @@ export class PerformanceList extends React.Component<Props, {}> {
     return (
       <Container>
         {!this.props.applicationsConnected ?
-          <>
-            <Logo />
-            <InfoHolder>
-              <Info>
-                Looks like we're not able to connect to any @speedsters package, reload your application in order to re-connect
-              </Info>
-            </InfoHolder>
-          </>
+          <NoConnection />
           :
           <List
             performances={this.props.performances}
